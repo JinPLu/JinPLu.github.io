@@ -17,7 +17,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto+Mono:wght@400;500&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
   </head>
   <body>
@@ -34,8 +33,6 @@
           <a href="#research">Research</a>
           <a href="#news">News</a>
           <a href="#publications">Publications</a>
-          <a href="#resources">Resources</a>
-          <a href="#outputs">Outputs</a>
           <a href="#education">Education</a>
           <a href="#methods">Methods</a>
           <a href="#visitors">Visitors</a>
@@ -81,17 +78,23 @@
               </a>
             </li>
             <li>
-              <a href="docs/jinpeng-lu-cv-cn.pdf" target="_blank" rel="noopener" aria-label="Curriculum vitae">
+              <a href="docs/jinpeng-lu-cv-cn.pdf" target="_blank" rel="noopener" aria-label="Chinese curriculum vitae">
                 <i class="fa-solid fa-file-lines"></i>
                 <span class="sr-only">CV</span>
               </a>
             </li>
           </ul>
 
-          <a class="cv-button" href="docs/jinpeng-lu-cv-cn.pdf" target="_blank" rel="noopener">
-            <i class="fa-solid fa-download" aria-hidden="true"></i>
-            CV (Chinese)
-          </a>
+          <div class="cv-actions" aria-label="Download CV">
+            <a class="cv-button" href="docs/jinpeng-lu-cv-cn.pdf" target="_blank" rel="noopener">
+              <i class="fa-solid fa-download" aria-hidden="true"></i>
+              CV (CN)
+            </a>
+            <a class="cv-button" href="docs/jinpeng-lu-cv-en.pdf" target="_blank" rel="noopener">
+              <i class="fa-solid fa-download" aria-hidden="true"></i>
+              CV (EN)
+            </a>
+          </div>
         </section>
       </aside>
 
@@ -106,28 +109,28 @@
               Previously, I received my B.S. in Mathematics from Harbin Institute of Technology, Shenzhen.
             </p>
             <p>
-              My research centers on multimodal representation learning for <strong>video-language models</strong>,
-              <strong>world models</strong>, and <strong>multimodal medical imaging</strong>. I am especially interested
+              My research centers on <strong>world models</strong>, <strong>VLM/VLA representation learning</strong>,
+              and <strong>medical vision foundation models</strong>. I am especially interested
               in how models build representations that support long-horizon state tracking, spatial reasoning, and
               reliable perception.
             </p>
             <p>
-              My earlier and ongoing work in Medical AI focuses on efficient 3D medical segmentation and
+              My earlier and ongoing work in Medical Vision focuses on efficient 3D medical segmentation and
               foundation-model transfer, and I now extend the same emphasis on rigorous evaluation and efficient systems
-              to world models and Video MLLMs. My recent work includes <strong>WRBench</strong> for persistent-state
-              diagnosis, <strong>VeloxSeg</strong> for efficient multimodal 3D segmentation, and medical foundation-model
+              to world models and VLM/VLA representation learning. My recent work includes <strong>WRBench</strong> for
+              six-dimensional dynamic world-state diagnostics, <strong>VeloxSeg</strong> for efficient multimodal 3D segmentation, and medical foundation-model
               evaluation with <strong>DINOv3</strong>.
             </p>
             <p>
-              I am interested in building world models with robust, persistent state cores, as well as video-language
-              models with long-term memory and spatial awareness.
+              I am interested in building world models with robust, persistent state cores, as well as VLM/VLA systems
+              with long-term memory, spatial awareness, and more inspectable action grounding.
             </p>
           </div>
 
           <ul class="quick-facts" aria-label="Research highlights">
             <li>
               <strong>Open benchmark</strong>
-              <span>WRBench toolkit · project page · HF artifacts · leaderboard</span>
+              <span>WRBench D1-D6 diagnostics · project page · HF artifacts · leaderboard</span>
             </li>
             <li>
               <strong>First-author papers</strong>
@@ -152,17 +155,19 @@
                 <span class="focus-icon"><i class="fa-solid fa-cubes-stacked"></i></span>
                 <span>
                   <strong>🌍 World Model</strong>
-                  <em>Persistent state, observability, and counterfactual camera interventions.</em>
+                  <em>Dynamic world-state diagnostics under viewpoint changes.</em>
                 </span>
               </summary>
               <p>
-                I study whether video generation systems maintain hidden object states beyond visible pixels. In
-                <strong>WRBench</strong>, camera motion is treated as an observability intervention: a model must leave a scene,
-                allow hidden events to evolve, and return with state-consistent evidence rather than only plausible pixels.
+                I study whether video generation systems maintain coherent dynamic world states under viewpoint changes. In
+                <strong>WRBench</strong>, camera motion is treated as an observability intervention, and the D1-D6 diagnostic chain
+                separates camera execution, visual integrity, visible spatial/state consistency, re-observation support, and
+                returned spatial/state consistency.
               </p>
               <p>
-                This line focuses on benchmark design, human-calibrated evaluation, public artifact release, and failure
-                analysis across model families, camera-control interfaces, and long-horizon visual consistency.
+                Returned-state evidence is a key diagnostic stage rather than the whole benchmark identity. This line focuses
+                on benchmark design, human-calibrated evaluation, public artifact release, and failure analysis across model
+                families, camera-control interfaces, and long-horizon visual consistency.
               </p>
             </details>
 
@@ -212,7 +217,7 @@
           </div>
           <ol class="news-list">
             <li><time>2026</time><span><strong>Current World Models Lack a Persistent State Core</strong> released as a first-author world-model diagnostic study.</span></li>
-            <li><time>2026</time><span>Released the <strong>WRBench</strong> toolkit, project page, artifacts, and leaderboard for camera-controlled world-model evaluation.</span></li>
+            <li><time>2026</time><span>Released the <strong>WRBench</strong> toolkit, project page, artifacts, and leaderboard for D1-D6 world-state diagnostic evaluation under viewpoint changes.</span></li>
             <li><time>2026</time><span><strong>Johnson-Lindenstrauss Lemma Guided Network for Efficient 3D Medical Segmentation</strong> accepted to ICLR 2026.</span></li>
             <li><time>2026</time><span>Contributed to <strong>Pelican-Unify 1.0</strong> and <strong>VLA-Trace</strong>, two embodied intelligence / VLA research projects.</span></li>
             <li><time>2024</time><span><strong>H2ASeg</strong> accepted to MICCAI 2024 as an early-accept paper.</span></li>
@@ -222,235 +227,167 @@
         <section id="publications" class="section">
           <div class="section-heading">
             <h2>Selected Publications</h2>
-            <p>For a complete and updated list, see my <a href="https://scholar.google.com/citations?user=wnc_GPkAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
+            <p>Formal paper records grouped by research direction. Project pages, code, artifacts, and source figures are attached to the relevant paper. Full list: <a href="https://scholar.google.com/citations?user=wnc_GPkAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
           </div>
 
-          <div class="publication-list">
-            <article class="publication">
-              <a class="pub-figure" href="assets/papers/wrbench-teaser.pdf" target="_blank" rel="noopener" aria-label="Open WRBench source figure">
-                <img src="assets/papers/previews/wrbench-teaser.png" alt="WRBench source figure showing camera motion as an observability intervention" loading="lazy">
-              </a>
-              <div class="pub-body">
-                <div class="pub-meta">
-                  <span class="badge badge-report">arXiv 2026</span>
-                  <span class="badge badge-role">First Author</span>
-                </div>
-                <h3><a href="https://arxiv.org/abs/2606.20545" target="_blank" rel="noopener">Current World Models Lack a Persistent State Core</a></h3>
-                <p class="authors"><strong>J. Lu</strong>, D. Zhu, H. Shi, L. Cai, G. Tang, Y. Chen, J. Cao, D. Tang, Y. Zhang, Y. Dai, X. Ju.</p>
-                <p class="pub-summary">Introduces WRBench, a camera-intervention benchmark for testing whether world models preserve off-screen state rather than only generating visually plausible returns.</p>
-                <div class="pub-links">
-                  <a href="https://arxiv.org/abs/2606.20545" target="_blank" rel="noopener">Paper</a>
-                  <a href="https://jinplu.github.io/WRBench/" target="_blank" rel="noopener">Project</a>
-                  <a href="https://github.com/JinPLu/WRBench" target="_blank" rel="noopener">Code</a>
-                  <a href="https://huggingface.co/collections/WRBench/wrbench-current-world-models-lack-a-persistent-state-core-6a365c717251293c9fc2cc26" target="_blank" rel="noopener">Artifacts</a>
-                  <a href="https://huggingface.co/spaces/WRBench/wrbench-leaderboard" target="_blank" rel="noopener">Leaderboard</a>
-                  <a href="assets/papers/wrbench-teaser.pdf" target="_blank" rel="noopener">Source Figure</a>
-                </div>
+          <div class="publication-fields">
+            <div class="publication-field">
+              <h3 class="publication-field-heading">🌍 World Model</h3>
+              <div class="publication-list">
+                <article class="publication">
+                  <a class="pub-figure" href="assets/papers/wrbench-teaser.pdf" target="_blank" rel="noopener" aria-label="Open WRBench source figure">
+                    <img src="assets/papers/previews/wrbench-teaser.png" alt="WRBench source figure showing viewpoint intervention and returned-state evidence" loading="lazy">
+                  </a>
+                  <div class="pub-body">
+                    <div class="pub-meta">
+                      <span class="badge badge-report">arXiv 2026</span>
+                      <span class="badge badge-role">First Author</span>
+                      <span class="badge badge-period">2026.02 - 2026.06</span>
+                    </div>
+                    <h3><a href="https://arxiv.org/abs/2606.20545" target="_blank" rel="noopener">Current World Models Lack a Persistent State Core</a></h3>
+                    <p class="authors"><strong>J. Lu</strong>, D. Zhu, H. Shi, L. Cai, G. Tang, Y. Chen, J. Cao, D. Tang, Y. Zhang, Y. Dai, X. Ju.</p>
+                    <p class="pub-summary">Introduces WRBench, a six-dimensional diagnostic benchmark for dynamic world-state evaluation under viewpoint changes, with returned-state consistency evaluated on judgeable re-observation cases.</p>
+                    <div class="pub-links">
+                      <a href="https://arxiv.org/abs/2606.20545" target="_blank" rel="noopener">Paper</a>
+                      <a href="https://jinplu.github.io/WRBench/" target="_blank" rel="noopener">Project</a>
+                      <a href="https://github.com/JinPLu/WRBench" target="_blank" rel="noopener">Code</a>
+                      <a href="https://huggingface.co/collections/WRBench/wrbench-current-world-models-lack-a-persistent-state-core-6a365c717251293c9fc2cc26" target="_blank" rel="noopener">Artifacts</a>
+                      <a href="https://huggingface.co/spaces/WRBench/wrbench-leaderboard" target="_blank" rel="noopener">Leaderboard</a>
+                      <a href="assets/papers/wrbench-teaser.pdf" target="_blank" rel="noopener">Source Figure</a>
+                    </div>
+                  </div>
+                </article>
               </div>
-            </article>
+            </div>
 
-            <article class="publication">
-              <a class="pub-figure" href="assets/papers/veloxseg-overview.pdf" target="_blank" rel="noopener" aria-label="Open VeloxSeg source figure">
-                <img src="assets/papers/previews/veloxseg-overview.png" alt="VeloxSeg overview source figure" loading="lazy">
-              </a>
-              <div class="pub-body">
-                <div class="pub-meta">
-                  <span class="badge badge-conference">ICLR 2026</span>
-                  <span class="badge badge-role">First Author</span>
-                  <span class="badge badge-ccf">CCF A</span>
-                </div>
-                <h3><a href="https://arxiv.org/abs/2509.22307" target="_blank" rel="noopener">Johnson-Lindenstrauss Lemma Guided Network for Efficient 3D Medical Segmentation</a></h3>
-                <p class="authors"><strong>J. Lu</strong>, L. Cai, Y. Chen, G. Tang, S. Jiang, H. Shi, Z. Xiong.</p>
-                <p class="pub-summary">Presents VeloxSeg, a 1.66M-parameter multimodal 3D segmentation model using JL-guided convolution, paired window attention, and spatially decoupled knowledge transfer.</p>
-                <div class="pub-links">
-                  <a href="https://arxiv.org/abs/2509.22307" target="_blank" rel="noopener">Paper</a>
-                  <a href="https://github.com/JinPLu/VeloxSeg" target="_blank" rel="noopener">Code</a>
-                  <a href="assets/papers/veloxseg-overview.pdf" target="_blank" rel="noopener">Source Figure</a>
-                </div>
+            <div class="publication-field">
+              <h3 class="publication-field-heading">🧠 VLM &amp; VLA Representation Learning</h3>
+              <div class="publication-list">
+                <article class="publication">
+                  <a class="pub-figure" href="assets/papers/pelican-unified-ac.pdf" target="_blank" rel="noopener" aria-label="Open Pelican-Unify source figure">
+                    <img src="assets/papers/previews/pelican-unified-ac.png" alt="Pelican-Unify source figure" loading="lazy">
+                  </a>
+                  <div class="pub-body">
+                    <div class="pub-meta">
+                      <span class="badge badge-report">arXiv 2026</span>
+                      <span class="badge badge-role">Contributor</span>
+                      <span class="badge badge-period">2025.11 - 2026.06</span>
+                    </div>
+                    <h3><a href="https://arxiv.org/abs/2605.15153" target="_blank" rel="noopener">Pelican-Unify 1.0: A Unified Embodied Intelligence Model</a></h3>
+                    <p class="authors">Y. Zhang, Y. Chen, C. Liu, Z. Ding, J. Xu, S. Zou, J. Liao, J. Hu, X. Ren, X. Zhang, et al.</p>
+                    <p class="pub-summary">Studies a unified embodied model that connects scene understanding, task reasoning, future imagination, and action prediction within one embodied loop.</p>
+                    <div class="pub-links">
+                      <a href="https://arxiv.org/abs/2605.15153" target="_blank" rel="noopener">Paper</a>
+                      <a href="assets/papers/pelican-unified-ac.pdf" target="_blank" rel="noopener">Source Figure</a>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="publication">
+                  <a class="pub-figure" href="assets/papers/vlatrace-framework.pdf" target="_blank" rel="noopener" aria-label="Open VLA-Trace source figure">
+                    <img src="assets/papers/previews/vlatrace-framework.png" alt="VLA-Trace framework source figure" loading="lazy">
+                  </a>
+                  <div class="pub-body">
+                    <div class="pub-meta">
+                      <span class="badge badge-report">arXiv 2026</span>
+                      <span class="badge badge-role">Contributor</span>
+                      <span class="badge badge-period">2026.03 - 2026.06</span>
+                    </div>
+                    <h3><a href="https://arxiv.org/abs/2605.30117" target="_blank" rel="noopener">VLA-Trace: Diagnosing Vision-Language-Action Models through Representation and Behavior Tracing</a></h3>
+                    <p class="authors">H. Shi, X. Ren, Y. Zhang, Q. Zhang, J. Hu, H. Shan, H. Dong, <strong>J. Lu</strong>, Y. Chen, Y. Zhang, Y. Dai, X. Ju.</p>
+                    <p class="pub-summary">Diagnoses VLA models by connecting representation dynamics, causal attribution, and rollout-level behavior across embodied tasks.</p>
+                    <div class="pub-links">
+                      <a href="https://arxiv.org/abs/2605.30117" target="_blank" rel="noopener">Paper</a>
+                      <a href="assets/papers/vlatrace-framework.pdf" target="_blank" rel="noopener">Source Figure</a>
+                    </div>
+                  </div>
+                </article>
               </div>
-            </article>
+            </div>
 
-            <article class="publication">
-              <a class="pub-figure" href="assets/papers/pelican-unified-ac.pdf" target="_blank" rel="noopener" aria-label="Open Pelican-Unify source figure">
-                <img src="assets/papers/previews/pelican-unified-ac.png" alt="Pelican-Unify source figure" loading="lazy">
-              </a>
-              <div class="pub-body">
-                <div class="pub-meta">
-                  <span class="badge badge-report">arXiv 2026</span>
-                  <span class="badge badge-role">Contributor</span>
-                </div>
-                <h3><a href="https://arxiv.org/abs/2605.15153" target="_blank" rel="noopener">Pelican-Unify 1.0: A Unified Embodied Intelligence Model</a></h3>
-                <p class="authors">Y. Zhang, Y. Chen, C. Liu, Z. Ding, J. Xu, S. Zou, J. Liao, J. Hu, X. Ren, X. Zhang, et al.</p>
-                <p class="pub-summary">Studies a unified embodied model that connects scene understanding, task reasoning, future imagination, and action prediction within one embodied loop.</p>
-                <div class="pub-links">
-                  <a href="https://arxiv.org/abs/2605.15153" target="_blank" rel="noopener">Paper</a>
-                  <a href="assets/papers/pelican-unified-ac.pdf" target="_blank" rel="noopener">Source Figure</a>
-                </div>
+            <div class="publication-field">
+              <h3 class="publication-field-heading">🏥 Medical Vision Foundation Models</h3>
+              <div class="publication-list">
+                <article class="publication">
+                  <a class="pub-figure" href="assets/papers/veloxseg-overview.pdf" target="_blank" rel="noopener" aria-label="Open VeloxSeg source figure">
+                    <img src="assets/papers/previews/veloxseg-overview.png" alt="VeloxSeg overview source figure" loading="lazy">
+                  </a>
+                  <div class="pub-body">
+                    <div class="pub-meta">
+                      <span class="badge badge-conference">ICLR 2026</span>
+                      <span class="badge badge-role">First Author</span>
+                      <span class="badge badge-ccf">CCF A</span>
+                      <span class="badge badge-period">2024.11 - 2025.11</span>
+                    </div>
+                    <h3><a href="https://arxiv.org/abs/2509.22307" target="_blank" rel="noopener">Johnson-Lindenstrauss Lemma Guided Network for Efficient 3D Medical Segmentation</a></h3>
+                    <p class="authors"><strong>J. Lu</strong>, L. Cai, Y. Chen, G. Tang, S. Jiang, H. Shi, Z. Xiong.</p>
+                    <p class="pub-summary">Presents VeloxSeg, a 1.66M-parameter multimodal 3D segmentation model using JL-guided convolution, paired window attention, and spatially decoupled knowledge transfer.</p>
+                    <div class="pub-links">
+                      <a href="https://arxiv.org/abs/2509.22307" target="_blank" rel="noopener">Paper</a>
+                      <a href="https://github.com/JinPLu/VeloxSeg" target="_blank" rel="noopener">Code</a>
+                      <a href="assets/papers/veloxseg-overview.pdf" target="_blank" rel="noopener">Source Figure</a>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="publication">
+                  <a class="pub-figure" href="assets/papers/dinov3-petct-feature.pdf" target="_blank" rel="noopener" aria-label="Open DINOv3 medical feature source figure">
+                    <img src="assets/papers/previews/dinov3-petct-feature.png" alt="DINOv3 PET/CT feature source figure" loading="lazy">
+                  </a>
+                  <div class="pub-body">
+                    <div class="pub-meta">
+                      <span class="badge badge-report">Technical Report 2025</span>
+                      <span class="badge badge-role">Co-first Author</span>
+                      <span class="badge badge-period">2025.08 - 2025.10</span>
+                    </div>
+                    <h3><a href="https://arxiv.org/abs/2509.06467" target="_blank" rel="noopener">Does DINOv3 Set a New Medical Vision Standard?</a></h3>
+                    <p class="authors">C. Liu*, Y. Chen*, H. Shi*, <strong>J. Lu*</strong>, B. Jian*, J. Pan*, L. Cai*, et al.</p>
+                    <p class="pub-summary">Benchmarks self-supervised vision foundation models across 2D and 3D medical classification, segmentation, and registration to identify transfer gains and modality gaps.</p>
+                    <div class="pub-links">
+                      <a href="https://arxiv.org/abs/2509.06467" target="_blank" rel="noopener">Paper</a>
+                      <a href="https://huggingface.co/papers/2509.06467" target="_blank" rel="noopener">HF Paper</a>
+                      <a href="assets/papers/dinov3-petct-feature.pdf" target="_blank" rel="noopener">Source Figure</a>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="publication">
+                  <a class="pub-figure" href="assets/papers/h2aseg-overview.png" target="_blank" rel="noopener" aria-label="Open H2ASeg source figure">
+                    <img src="assets/papers/h2aseg-overview.png" alt="H2ASeg source figure showing PET/CT hierarchical adaptive interaction architecture" loading="lazy">
+                  </a>
+                  <div class="pub-body">
+                    <div class="pub-meta">
+                      <span class="badge badge-conference">MICCAI 2024</span>
+                      <span class="badge badge-role">First Author</span>
+                      <span class="badge badge-ccf">CCF B</span>
+                      <span class="badge badge-period">2023.09 - 2024.03</span>
+                    </div>
+                    <h3><a href="https://doi.org/10.1007/978-3-031-72111-3_30" target="_blank" rel="noopener">H2ASeg: Hierarchical Adaptive Interaction and Weighting Network for Tumor Segmentation in PET/CT Images</a></h3>
+                    <p class="authors"><strong>J. Lu</strong>, J. Chen, L. Cai, S. Jiang, Y. Zhang.</p>
+                    <p class="pub-summary">Builds a hierarchical multimodal interaction and weighting network for PET/CT tumor segmentation, improving robustness on complex lesion regions.</p>
+                    <div class="pub-links">
+                      <a href="https://doi.org/10.1007/978-3-031-72111-3_30" target="_blank" rel="noopener">Paper</a>
+                      <a href="https://github.com/JinPLu/H2ASeg" target="_blank" rel="noopener">Code</a>
+                      <a href="assets/papers/h2aseg-overview.png" target="_blank" rel="noopener">Source Figure</a>
+                    </div>
+                  </div>
+                </article>
               </div>
-            </article>
 
-            <article class="publication">
-              <a class="pub-figure" href="assets/papers/vlatrace-framework.pdf" target="_blank" rel="noopener" aria-label="Open VLA-Trace source figure">
-                <img src="assets/papers/previews/vlatrace-framework.png" alt="VLA-Trace framework source figure" loading="lazy">
-              </a>
-              <div class="pub-body">
-                <div class="pub-meta">
-                  <span class="badge badge-report">arXiv 2026</span>
-                  <span class="badge badge-role">Contributor</span>
-                </div>
-                <h3><a href="https://arxiv.org/abs/2605.30117" target="_blank" rel="noopener">VLA-Trace: Diagnosing Vision-Language-Action Models through Representation and Behavior Tracing</a></h3>
-                <p class="authors">H. Shi, X. Ren, Y. Zhang, Q. Zhang, J. Hu, H. Shan, H. Dong, <strong>J. Lu</strong>, Y. Chen, Y. Zhang, Y. Dai, X. Ju.</p>
-                <p class="pub-summary">Diagnoses VLA models by connecting representation dynamics, causal attribution, and rollout-level behavior across embodied tasks.</p>
-                <div class="pub-links">
-                  <a href="https://arxiv.org/abs/2605.30117" target="_blank" rel="noopener">Paper</a>
-                  <a href="assets/papers/vlatrace-framework.pdf" target="_blank" rel="noopener">Source Figure</a>
-                </div>
+              <div class="additional-publications">
+                <h3>Additional Medical AI Publications</h3>
+                <ul>
+                  <li>
+                    <a href="https://doi.org/10.1016/j.media.2025.103631" target="_blank" rel="noopener">AttriMIL: Revisiting Attention-based Multiple Instance Learning for Whole-slide Pathological Image Classification</a>
+                    <span>Medical Image Analysis 2025 · Contributor</span>
+                  </li>
+                  <li>
+                    <a href="https://arxiv.org/abs/2508.12381" target="_blank" rel="noopener">IPGPhormer: Interpretable Pathology Graph-Transformer for Survival Analysis</a>
+                    <span>arXiv 2025 · Contributor</span>
+                  </li>
+                </ul>
               </div>
-            </article>
-
-            <article class="publication">
-              <a class="pub-figure" href="assets/papers/dinov3-petct-feature.pdf" target="_blank" rel="noopener" aria-label="Open DINOv3 medical feature source figure">
-                <img src="assets/papers/previews/dinov3-petct-feature.png" alt="DINOv3 PET/CT feature source figure" loading="lazy">
-              </a>
-              <div class="pub-body">
-                <div class="pub-meta">
-                  <span class="badge badge-report">Technical Report 2025</span>
-                  <span class="badge badge-role">Co-first Author</span>
-                </div>
-                <h3><a href="https://arxiv.org/abs/2509.06467" target="_blank" rel="noopener">Does DINOv3 Set a New Medical Vision Standard?</a></h3>
-                <p class="authors">C. Liu*, Y. Chen*, H. Shi*, <strong>J. Lu*</strong>, B. Jian*, J. Pan*, L. Cai*, et al.</p>
-                <p class="pub-summary">Benchmarks self-supervised vision foundation models across 2D and 3D medical classification, segmentation, and registration to identify transfer gains and modality gaps.</p>
-                <div class="pub-links">
-                  <a href="https://arxiv.org/abs/2509.06467" target="_blank" rel="noopener">Paper</a>
-                  <a href="https://huggingface.co/papers/2509.06467" target="_blank" rel="noopener">HF Paper</a>
-                  <a href="assets/papers/dinov3-petct-feature.pdf" target="_blank" rel="noopener">Source Figure</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="publication">
-              <a class="pub-figure" href="assets/papers/h2aseg-overview.png" target="_blank" rel="noopener" aria-label="Open H2ASeg source figure">
-                <img src="assets/papers/h2aseg-overview.png" alt="H2ASeg source figure showing PET/CT hierarchical adaptive interaction architecture" loading="lazy">
-              </a>
-              <div class="pub-body">
-                <div class="pub-meta">
-                  <span class="badge badge-conference">MICCAI 2024</span>
-                  <span class="badge badge-role">First Author</span>
-                  <span class="badge badge-ccf">CCF B</span>
-                </div>
-                <h3><a href="https://doi.org/10.1007/978-3-031-72111-3_30" target="_blank" rel="noopener">H2ASeg: Hierarchical Adaptive Interaction and Weighting Network for Tumor Segmentation in PET/CT Images</a></h3>
-                <p class="authors"><strong>J. Lu</strong>, J. Chen, L. Cai, S. Jiang, Y. Zhang.</p>
-                <p class="pub-summary">Builds a hierarchical multimodal interaction and weighting network for PET/CT tumor segmentation, improving robustness on complex lesion regions.</p>
-                <div class="pub-links">
-                  <a href="https://doi.org/10.1007/978-3-031-72111-3_30" target="_blank" rel="noopener">Paper</a>
-                  <a href="https://github.com/JinPLu/H2ASeg" target="_blank" rel="noopener">Code</a>
-                  <a href="assets/papers/h2aseg-overview.png" target="_blank" rel="noopener">Source Figure</a>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <div class="additional-publications">
-            <h3>Additional Publications</h3>
-            <ul>
-              <li>
-                <a href="https://doi.org/10.1016/j.media.2025.103631" target="_blank" rel="noopener">AttriMIL: Revisiting Attention-based Multiple Instance Learning for Whole-slide Pathological Image Classification</a>
-                <span>Medical Image Analysis 2025 · Contributor</span>
-              </li>
-              <li>
-                <a href="https://arxiv.org/abs/2508.12381" target="_blank" rel="noopener">IPGPhormer: Interpretable Pathology Graph-Transformer for Survival Analysis</a>
-                <span>arXiv 2025 · Contributor</span>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <section id="resources" class="section">
-          <div class="section-heading">
-            <h2>Open Resources</h2>
-            <p>Code, benchmark artifacts, and project surfaces for reproducible research and collaboration.</p>
-          </div>
-          <div class="resource-list">
-            <article class="resource-item">
-              <h3>WRBench</h3>
-              <p>Camera-controlled benchmark and toolkit for diagnosing persistent world state in video world models.</p>
-              <div class="pub-links">
-                <a href="https://jinplu.github.io/WRBench/" target="_blank" rel="noopener">Project</a>
-                <a href="https://github.com/JinPLu/WRBench" target="_blank" rel="noopener">Code</a>
-                <a href="https://huggingface.co/collections/WRBench/wrbench-current-world-models-lack-a-persistent-state-core-6a365c717251293c9fc2cc26" target="_blank" rel="noopener">Artifacts</a>
-                <a href="https://huggingface.co/spaces/WRBench/wrbench-leaderboard" target="_blank" rel="noopener">Leaderboard</a>
-              </div>
-            </article>
-            <article class="resource-item">
-              <h3>VeloxSeg</h3>
-              <p>Lightweight multimodal 3D medical segmentation framework for efficient PET/CT and 3D vision systems.</p>
-              <div class="pub-links">
-                <a href="https://github.com/JinPLu/VeloxSeg" target="_blank" rel="noopener">Code</a>
-                <a href="https://arxiv.org/abs/2509.22307" target="_blank" rel="noopener">Paper</a>
-              </div>
-            </article>
-            <article class="resource-item">
-              <h3>H2ASeg</h3>
-              <p>Hierarchical adaptive PET/CT interaction and weighting network for tumor segmentation.</p>
-              <div class="pub-links">
-                <a href="https://github.com/JinPLu/H2ASeg" target="_blank" rel="noopener">Code</a>
-                <a href="https://doi.org/10.1007/978-3-031-72111-3_30" target="_blank" rel="noopener">Paper</a>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section id="outputs" class="section">
-          <div class="section-heading">
-            <h2>Outputs &amp; Work</h2>
-            <p>Selected outputs grouped by field; dates indicate active work periods or public release timing.</p>
-          </div>
-          <div class="project-notes">
-            <article class="project-note">
-              <h3>🌍 World Model</h3>
-              <ul class="dated-list">
-                <li>
-                  <time>2026.02 - 2026.06</time>
-                  <span><strong>WRBench / Persistent State Core.</strong> Designed camera-intervention diagnostics for hidden world-state persistence, evaluating 23 models across four control paradigms and 9,600 generated videos.</span>
-                </li>
-                <li>
-                  <time>2026.06</time>
-                  <span><strong>Open benchmark release.</strong> Published the project page, code, Hugging Face artifacts, and leaderboard for reproducible world-model evaluation.</span>
-                </li>
-              </ul>
-            </article>
-
-            <article class="project-note">
-              <h3>🧠 VLM &amp; VLA Representation Learning</h3>
-              <ul class="dated-list">
-                <li>
-                  <time>2026.03 - 2026.06</time>
-                  <span><strong>VLA-Trace.</strong> Contributed to representation and behavior tracing for VLA models, linking layer-level dynamics, causal attribution, and rollout behavior.</span>
-                </li>
-                <li>
-                  <time>2025.11 - 2026.06</time>
-                  <span><strong>Pelican-Unify 1.0.</strong> Contributed to a unified embodied model that connects understanding, reasoning, future imagination, and action prediction.</span>
-                </li>
-              </ul>
-            </article>
-
-            <article class="project-note">
-              <h3>🏥 Medical Vision Foundation Models</h3>
-              <ul class="dated-list">
-                <li>
-                  <time>2025.08 - 2025.10</time>
-                  <span><strong>DINOv3 medical benchmark.</strong> Evaluated medical foundation-model transfer across 2D/3D classification, segmentation, and registration tasks.</span>
-                </li>
-                <li>
-                  <time>2024.11 - 2025.11</time>
-                  <span><strong>VeloxSeg.</strong> Built a 1.66M-parameter multimodal 3D segmentation model with 11x GPU and 48x CPU throughput gains over baseline settings.</span>
-                </li>
-                <li>
-                  <time>2023.09 - 2024.03</time>
-                  <span><strong>H2ASeg.</strong> Developed hierarchical adaptive PET/CT interaction and weighting for tumor segmentation, accepted by MICCAI 2024.</span>
-                </li>
-              </ul>
-            </article>
+            </div>
           </div>
         </section>
 
@@ -483,7 +420,7 @@
           <div class="skill-groups">
             <div>
               <h3>Research</h3>
-              <p>World model and Video MLLM evaluation, VLA representation diagnosis, multimodal foundation model transfer, efficient 3D medical vision, self-supervised learning.</p>
+              <p>World model evaluation, VLM/VLA representation diagnosis, multimodal foundation-model transfer, efficient 3D medical vision, self-supervised learning.</p>
             </div>
             <div>
               <h3>Engineering</h3>
