@@ -19,7 +19,7 @@ Then visit `http://127.0.0.1:4173/`.
 - `assets/css/styles.css` - Manling Li-inspired typography, sidebar, and section layout.
 - `assets/img/profile.jpg` - resized profile photo generated from `../figure/me.jpg`.
 - `assets/papers/` - original public arXiv TeX source figure assets plus full-page preview images.
-- `docs/jinpeng-lu-cv-cn.pdf` - public Chinese CV PDF without phone or WeChat QR code.
+- `docs/jinpeng-lu-cv-cn.pdf` - public Chinese CV PDF without private phone or QR-code contact details.
 
 ## Notes
 

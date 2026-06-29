@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jinpeng Lu | World Models, Video MLLMs, Medical AI</title>
+    <title>Jinpeng Lu | World Models, VLM/VLA, Medical AI</title>
     <meta
       name="description"
-      content="Jinpeng Lu is a master's student at the University of Science and Technology of China, working on world models, video MLLMs, embodied AI, VLA evaluation, and efficient medical vision systems."
+      content="Jinpeng Lu is a master's student at the University of Science and Technology of China, working on world models, VLM/VLA representation learning, and medical vision foundation models."
     >
     <meta name="author" content="Jinpeng Lu">
     <meta property="og:title" content="Jinpeng Lu | Academic Homepage">
-    <meta property="og:description" content="World Models, Video MLLMs, Medical AI, VLA Evaluation, and Medical Vision Foundation Models.">
+    <meta property="og:description" content="World Models, VLM/VLA Representation Learning, and Medical Vision Foundation Models.">
     <meta property="og:type" content="profile">
     <meta property="og:image" content="assets/img/profile.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,7 +35,7 @@
           <a href="#news">News</a>
           <a href="#publications">Publications</a>
           <a href="#resources">Resources</a>
-          <a href="#projects">Projects</a>
+          <a href="#outputs">Outputs</a>
           <a href="#education">Education</a>
           <a href="#methods">Methods</a>
           <a href="#visitors">Visitors</a>
@@ -52,8 +52,9 @@
           <p class="profile-role">M.S. Student<br>University of Science and Technology<br>of China</p>
 
           <div class="profile-summary">
-            <p>Information and Communication Engineering</p>
-            <p>World Models · Video MLLMs · Medical AI</p>
+            <p>M.S. Information and Communication Engineering · USTC</p>
+            <p>B.S. Mathematics · HIT Shenzhen</p>
+            <p>World Models · VLM/VLA · Medical AI</p>
           </div>
 
           <p class="profile-contact">
@@ -102,6 +103,7 @@
               Hi, I am <strong>Jinpeng Lu</strong>, a master's student in Information and Communication Engineering at the
               <a href="https://www.ustc.edu.cn/" target="_blank" rel="noopener">University of Science and Technology of China</a>.
               I work with Prof. <a href="https://scholar.google.com/citations?user=Snl0HPEAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Zhiwei Xiong</a>.
+              Previously, I received my B.S. in Mathematics from Harbin Institute of Technology, Shenzhen.
             </p>
             <p>
               My research centers on multimodal representation learning for <strong>video-language models</strong>,
@@ -149,7 +151,7 @@
               <summary>
                 <span class="focus-icon"><i class="fa-solid fa-cubes-stacked"></i></span>
                 <span>
-                  <strong>World Model</strong>
+                  <strong>🌍 World Model</strong>
                   <em>Persistent state, observability, and counterfactual camera interventions.</em>
                 </span>
               </summary>
@@ -168,8 +170,8 @@
               <summary>
                 <span class="focus-icon"><i class="fa-solid fa-robot"></i></span>
                 <span>
-                  <strong>VLM &amp; VLA Representation Learning</strong>
-                  <em>Representation tracing, action routing, and unified understanding-generation-action loops.</em>
+                  <strong>🧠 VLM &amp; VLA Representation Learning</strong>
+                  <em>Video-language representations, action routing, and behavior tracing.</em>
                 </span>
               </summary>
               <p>
@@ -187,7 +189,7 @@
               <summary>
                 <span class="focus-icon"><i class="fa-solid fa-staff-snake"></i></span>
                 <span>
-                  <strong>Medical Vision Foundation Models</strong>
+                  <strong>🏥 Medical Vision Foundation Models</strong>
                   <em>Efficient 3D perception, multimodal segmentation, and transfer limits.</em>
                 </span>
               </summary>
@@ -398,60 +400,55 @@
           </div>
         </section>
 
-        <section id="projects" class="section">
+        <section id="outputs" class="section">
           <div class="section-heading">
-            <h2>Research Threads</h2>
-            <p>Broader questions behind the paper list; the publications above provide formal records and source figures.</p>
+            <h2>Outputs &amp; Work</h2>
+            <p>Selected outputs grouped by field; dates indicate active work periods or public release timing.</p>
           </div>
           <div class="project-notes">
             <article class="project-note">
-              <h3>Persistent State in World Models</h3>
-              <p>
-                <strong>Question.</strong> Can current video/world models preserve hidden world state after the camera leaves,
-                events evolve, and the view returns?
-              </p>
-              <p>
-                <strong>Approach.</strong> I designed WRBench around three separable checks: camera-interaction following,
-                visible-scene continuity, and returned-object state consistency.
-              </p>
-              <ul>
-                <li>23 evaluated models across four control paradigms.</li>
-                <li>9,600 generated videos with state-return diagnostics.</li>
-                <li>Failure modes: frozen hidden events, access-direction sensitivity, and metric paradoxes.</li>
+              <h3>🌍 World Model</h3>
+              <ul class="dated-list">
+                <li>
+                  <time>2026.02 - 2026.06</time>
+                  <span><strong>WRBench / Persistent State Core.</strong> Designed camera-intervention diagnostics for hidden world-state persistence, evaluating 23 models across four control paradigms and 9,600 generated videos.</span>
+                </li>
+                <li>
+                  <time>2026.06</time>
+                  <span><strong>Open benchmark release.</strong> Published the project page, code, Hugging Face artifacts, and leaderboard for reproducible world-model evaluation.</span>
+                </li>
               </ul>
             </article>
 
             <article class="project-note">
-              <h3>Embodied Representation to Action</h3>
-              <p>
-                <strong>Question.</strong> How do multimodal representations become action, and where can reasoning or state
-                tracking break before rollout behavior fails?
-              </p>
-              <p>
-                <strong>Approach.</strong> I contribute to representation- and behavior-level analysis for embodied intelligence,
-                focusing on how evidence is routed into action predictions.
-              </p>
-              <ul>
-                <li>Layer-wise representation tracing and attention-behavior alignment.</li>
-                <li>Rollout-level probes for vision-language-action models.</li>
-                <li>Unified understanding-generation-action framing in embodied foundation models.</li>
+              <h3>🧠 VLM &amp; VLA Representation Learning</h3>
+              <ul class="dated-list">
+                <li>
+                  <time>2026.03 - 2026.06</time>
+                  <span><strong>VLA-Trace.</strong> Contributed to representation and behavior tracing for VLA models, linking layer-level dynamics, causal attribution, and rollout behavior.</span>
+                </li>
+                <li>
+                  <time>2025.11 - 2026.06</time>
+                  <span><strong>Pelican-Unify 1.0.</strong> Contributed to a unified embodied model that connects understanding, reasoning, future imagination, and action prediction.</span>
+                </li>
               </ul>
             </article>
 
             <article class="project-note">
-              <h3>Efficient 3D Medical Vision</h3>
-              <p>
-                <strong>Question.</strong> How can 3D medical systems improve robustness and transfer while keeping the model
-                light enough for high-dimensional multimodal imaging?
-              </p>
-              <p>
-                <strong>Approach.</strong> My medical vision work targets the accuracy-efficiency tension through lightweight
-                3D modules, hierarchical PET/CT fusion, and foundation-model transfer analysis.
-              </p>
-              <ul>
-                <li>VeloxSeg: 1.66M parameters with 11x GPU and 48x CPU throughput gains over baseline settings.</li>
-                <li>H2ASeg: hierarchical adaptive PET/CT interaction for tumor segmentation.</li>
-                <li>DINOv3 medical benchmark: transfer analysis across 2D/3D tasks.</li>
+              <h3>🏥 Medical Vision Foundation Models</h3>
+              <ul class="dated-list">
+                <li>
+                  <time>2025.08 - 2025.10</time>
+                  <span><strong>DINOv3 medical benchmark.</strong> Evaluated medical foundation-model transfer across 2D/3D classification, segmentation, and registration tasks.</span>
+                </li>
+                <li>
+                  <time>2024.11 - 2025.11</time>
+                  <span><strong>VeloxSeg.</strong> Built a 1.66M-parameter multimodal 3D segmentation model with 11x GPU and 48x CPU throughput gains over baseline settings.</span>
+                </li>
+                <li>
+                  <time>2023.09 - 2024.03</time>
+                  <span><strong>H2ASeg.</strong> Developed hierarchical adaptive PET/CT interaction and weighting for tumor segmentation, accepted by MICCAI 2024.</span>
+                </li>
               </ul>
             </article>
           </div>
