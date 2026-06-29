@@ -35,7 +35,7 @@
           <a href="#publications">Publications</a>
           <a href="#education">Education</a>
           <a href="#methods">Methods</a>
-          <a href="#visitors">Visitors</a>
+          <a href="#visitors">Site Visitors</a>
         </div>
       </nav>
     </header>
@@ -110,20 +110,18 @@
             </p>
             <p>
               My research centers on <strong>world models</strong>, <strong>VLM/VLA representation learning</strong>,
-              and <strong>medical vision foundation models</strong>. I am especially interested
-              in how models build representations that support long-horizon state tracking, spatial reasoning, and
-              reliable perception.
+              and <strong>medical vision foundation models</strong>. I study how models keep useful state over time,
+              connect perception to spatial reasoning, and expose failures before they appear in downstream decisions.
             </p>
             <p>
-              My earlier and ongoing work in Medical Vision focuses on efficient 3D medical segmentation and
-              foundation-model transfer, and I now extend the same emphasis on rigorous evaluation and efficient systems
-              to world models and VLM/VLA representation learning. My recent work includes <strong>WRBench</strong> for
-              six-dimensional dynamic world-state diagnostics, <strong>VeloxSeg</strong> for efficient multimodal 3D segmentation, and medical foundation-model
-              evaluation with <strong>DINOv3</strong>.
+              My work combines benchmark design, representation analysis, and efficient model engineering. In medical
+              vision, this has meant building lightweight 3D segmentation systems and testing how visual foundation
+              models transfer across modalities. In world-model and VLM/VLA research, I focus on diagnostics that make
+              long-horizon state, spatial grounding, and behavior traces measurable rather than anecdotal.
             </p>
             <p>
-              I am interested in building world models with robust, persistent state cores, as well as VLM/VLA systems
-              with long-term memory, spatial awareness, and more inspectable action grounding.
+              My current agenda is to build evaluation and modeling tools for world models with persistent state cores,
+              and for VLM/VLA systems with long-term memory, spatial awareness, and inspectable action grounding.
             </p>
           </div>
 
@@ -180,9 +178,9 @@
                 </span>
               </summary>
               <p>
-                I am interested in how multimodal representations become embodied behavior. My recent collaborations include
-                <strong>VLA-Trace</strong>, which links layer-level representation dynamics to rollout behavior, and
-                <strong>Pelican-Unify</strong>, which connects understanding, reasoning, future imagination, and action prediction.
+                I am interested in how multimodal representations become embodied behavior. Recent contributor projects such as
+                <strong>Pelican-Unify</strong> and <strong>VLA-Trace</strong> help connect scene understanding, reasoning,
+                future imagination, action prediction, and rollout-level behavior.
               </p>
               <p>
                 The goal is to make VLA and embodied foundation models more inspectable: where task evidence appears, how it
@@ -219,7 +217,7 @@
             <li><time>2026</time><span><strong>Current World Models Lack a Persistent State Core</strong> released as a first-author world-model diagnostic study.</span></li>
             <li><time>2026</time><span>Released the <strong>WRBench</strong> toolkit, project page, artifacts, and leaderboard for D1-D6 world-state diagnostic evaluation under viewpoint changes.</span></li>
             <li><time>2026</time><span><strong>Johnson-Lindenstrauss Lemma Guided Network for Efficient 3D Medical Segmentation</strong> accepted to ICLR 2026.</span></li>
-            <li><time>2026</time><span>Contributed to <strong>Pelican-Unify 1.0</strong> and <strong>VLA-Trace</strong>, two embodied intelligence / VLA research projects.</span></li>
+            <li><time>2026</time><span>Contributor outputs in embodied intelligence and VLA diagnosis include <strong>Pelican-Unify 1.0</strong> and <strong>VLA-Trace</strong>.</span></li>
             <li><time>2024</time><span><strong>H2ASeg</strong> accepted to MICCAI 2024 as an early-accept paper.</span></li>
           </ol>
         </section>
@@ -227,7 +225,7 @@
         <section id="publications" class="section">
           <div class="section-heading">
             <h2>Selected Publications</h2>
-            <p>Formal paper records grouped by research direction. Project pages, code, artifacts, and source figures are attached to the relevant paper. Full list: <a href="https://scholar.google.com/citations?user=wnc_GPkAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
+            <p>Representative works are summarized by task, method, and result; contributor outputs are listed with their main contribution. Full list: <a href="https://scholar.google.com/citations?user=wnc_GPkAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
           </div>
 
           <div class="publication-fields">
@@ -246,7 +244,7 @@
                     </div>
                     <h3><a href="https://arxiv.org/abs/2606.20545" target="_blank" rel="noopener">Current World Models Lack a Persistent State Core</a></h3>
                     <p class="authors"><strong>J. Lu</strong>, D. Zhu, H. Shi, L. Cai, G. Tang, Y. Chen, J. Cao, D. Tang, Y. Zhang, Y. Dai, X. Ju.</p>
-                    <p class="pub-summary">Introduces WRBench, a six-dimensional diagnostic benchmark for dynamic world-state evaluation under viewpoint changes, with returned-state consistency evaluated on judgeable re-observation cases.</p>
+                    <p class="pub-summary"><strong>Task:</strong> evaluate dynamic world-state consistency under viewpoint changes. <strong>Method:</strong> WRBench uses a D1-D6 diagnostic profile with camera observability interventions and judgeable re-observation cases. <strong>Result:</strong> reveals persistent-state failures across current world models while keeping returned-state consistency as one diagnostic stage.</p>
                     <div class="pub-links">
                       <a href="https://arxiv.org/abs/2606.20545" target="_blank" rel="noopener">Paper</a>
                       <a href="https://jinplu.github.io/WRBench/" target="_blank" rel="noopener">Project</a>
@@ -262,46 +260,20 @@
 
             <div class="publication-field">
               <h3 class="publication-field-heading">🧠 VLM &amp; VLA Representation Learning</h3>
-              <div class="publication-list">
-                <article class="publication">
-                  <a class="pub-figure" href="assets/papers/pelican-unified-ac.pdf" target="_blank" rel="noopener" aria-label="Open Pelican-Unify source figure">
-                    <img src="assets/papers/previews/pelican-unified-ac.png" alt="Pelican-Unify source figure" loading="lazy">
-                  </a>
-                  <div class="pub-body">
-                    <div class="pub-meta">
-                      <span class="badge badge-report">arXiv 2026</span>
-                      <span class="badge badge-role">Contributor</span>
-                      <span class="badge badge-period">2025.11 - 2026.06</span>
-                    </div>
-                    <h3><a href="https://arxiv.org/abs/2605.15153" target="_blank" rel="noopener">Pelican-Unify 1.0: A Unified Embodied Intelligence Model</a></h3>
-                    <p class="authors">Y. Zhang, Y. Chen, C. Liu, Z. Ding, J. Xu, S. Zou, J. Liao, J. Hu, X. Ren, X. Zhang, et al.</p>
-                    <p class="pub-summary">Studies a unified embodied model that connects scene understanding, task reasoning, future imagination, and action prediction within one embodied loop.</p>
-                    <div class="pub-links">
-                      <a href="https://arxiv.org/abs/2605.15153" target="_blank" rel="noopener">Paper</a>
-                      <a href="assets/papers/pelican-unified-ac.pdf" target="_blank" rel="noopener">Source Figure</a>
-                    </div>
-                  </div>
-                </article>
-
-                <article class="publication">
-                  <a class="pub-figure" href="assets/papers/vlatrace-framework.pdf" target="_blank" rel="noopener" aria-label="Open VLA-Trace source figure">
-                    <img src="assets/papers/previews/vlatrace-framework.png" alt="VLA-Trace framework source figure" loading="lazy">
-                  </a>
-                  <div class="pub-body">
-                    <div class="pub-meta">
-                      <span class="badge badge-report">arXiv 2026</span>
-                      <span class="badge badge-role">Contributor</span>
-                      <span class="badge badge-period">2026.03 - 2026.06</span>
-                    </div>
-                    <h3><a href="https://arxiv.org/abs/2605.30117" target="_blank" rel="noopener">VLA-Trace: Diagnosing Vision-Language-Action Models through Representation and Behavior Tracing</a></h3>
-                    <p class="authors">H. Shi, X. Ren, Y. Zhang, Q. Zhang, J. Hu, H. Shan, H. Dong, <strong>J. Lu</strong>, Y. Chen, Y. Zhang, Y. Dai, X. Ju.</p>
-                    <p class="pub-summary">Diagnoses VLA models by connecting representation dynamics, causal attribution, and rollout-level behavior across embodied tasks.</p>
-                    <div class="pub-links">
-                      <a href="https://arxiv.org/abs/2605.30117" target="_blank" rel="noopener">Paper</a>
-                      <a href="assets/papers/vlatrace-framework.pdf" target="_blank" rel="noopener">Source Figure</a>
-                    </div>
-                  </div>
-                </article>
+              <div class="additional-publications">
+                <h3>Contributor Outputs</h3>
+                <ul>
+                  <li>
+                    <a href="https://arxiv.org/abs/2605.15153" target="_blank" rel="noopener">Pelican-Unify 1.0: A Unified Embodied Intelligence Model</a>
+                    <span>arXiv 2026 · Contributor. Contributes to an embodied model loop that unifies scene understanding, task reasoning, future imagination, and action prediction.</span>
+                    <span><a href="assets/papers/pelican-unified-ac.pdf" target="_blank" rel="noopener">Source Figure</a></span>
+                  </li>
+                  <li>
+                    <a href="https://arxiv.org/abs/2605.30117" target="_blank" rel="noopener">VLA-Trace: Diagnosing Vision-Language-Action Models through Representation and Behavior Tracing</a>
+                    <span>arXiv 2026 · Contributor. Contributes to representation and behavior tracing that relates layer-level VLA dynamics to rollout outcomes.</span>
+                    <span><a href="assets/papers/vlatrace-framework.pdf" target="_blank" rel="noopener">Source Figure</a></span>
+                  </li>
+                </ul>
               </div>
             </div>
 
@@ -321,7 +293,7 @@
                     </div>
                     <h3><a href="https://arxiv.org/abs/2509.22307" target="_blank" rel="noopener">Johnson-Lindenstrauss Lemma Guided Network for Efficient 3D Medical Segmentation</a></h3>
                     <p class="authors"><strong>J. Lu</strong>, L. Cai, Y. Chen, G. Tang, S. Jiang, H. Shi, Z. Xiong.</p>
-                    <p class="pub-summary">Presents VeloxSeg, a 1.66M-parameter multimodal 3D segmentation model using JL-guided convolution, paired window attention, and spatially decoupled knowledge transfer.</p>
+                    <p class="pub-summary"><strong>Task:</strong> perform efficient multimodal 3D medical segmentation. <strong>Method:</strong> VeloxSeg combines JL-guided convolution, paired window attention, and spatially decoupled knowledge transfer. <strong>Result:</strong> delivers a 1.66M-parameter PET/CT segmentation model for lightweight volumetric perception.</p>
                     <div class="pub-links">
                       <a href="https://arxiv.org/abs/2509.22307" target="_blank" rel="noopener">Paper</a>
                       <a href="https://github.com/JinPLu/VeloxSeg" target="_blank" rel="noopener">Code</a>
@@ -342,7 +314,7 @@
                     </div>
                     <h3><a href="https://arxiv.org/abs/2509.06467" target="_blank" rel="noopener">Does DINOv3 Set a New Medical Vision Standard?</a></h3>
                     <p class="authors">C. Liu*, Y. Chen*, H. Shi*, <strong>J. Lu*</strong>, B. Jian*, J. Pan*, L. Cai*, et al.</p>
-                    <p class="pub-summary">Benchmarks self-supervised vision foundation models across 2D and 3D medical classification, segmentation, and registration to identify transfer gains and modality gaps.</p>
+                    <p class="pub-summary"><strong>Task:</strong> test whether DINOv3-style self-supervised features transfer to medical vision. <strong>Method:</strong> benchmark 2D and 3D classification, segmentation, and registration across medical modalities. <strong>Result:</strong> identifies transfer gains, task limits, and modality gaps for medical foundation-model use.</p>
                     <div class="pub-links">
                       <a href="https://arxiv.org/abs/2509.06467" target="_blank" rel="noopener">Paper</a>
                       <a href="https://huggingface.co/papers/2509.06467" target="_blank" rel="noopener">HF Paper</a>
@@ -364,7 +336,7 @@
                     </div>
                     <h3><a href="https://doi.org/10.1007/978-3-031-72111-3_30" target="_blank" rel="noopener">H2ASeg: Hierarchical Adaptive Interaction and Weighting Network for Tumor Segmentation in PET/CT Images</a></h3>
                     <p class="authors"><strong>J. Lu</strong>, J. Chen, L. Cai, S. Jiang, Y. Zhang.</p>
-                    <p class="pub-summary">Builds a hierarchical multimodal interaction and weighting network for PET/CT tumor segmentation, improving robustness on complex lesion regions.</p>
+                    <p class="pub-summary"><strong>Task:</strong> segment tumors in paired PET/CT images under complex lesion appearance. <strong>Method:</strong> H2ASeg uses hierarchical adaptive interaction and weighting for multimodal feature fusion. <strong>Result:</strong> improves robust lesion-region segmentation in PET/CT images.</p>
                     <div class="pub-links">
                       <a href="https://doi.org/10.1007/978-3-031-72111-3_30" target="_blank" rel="noopener">Paper</a>
                       <a href="https://github.com/JinPLu/H2ASeg" target="_blank" rel="noopener">Code</a>
@@ -379,11 +351,15 @@
                 <ul>
                   <li>
                     <a href="https://doi.org/10.1016/j.media.2025.103631" target="_blank" rel="noopener">AttriMIL: Revisiting Attention-based Multiple Instance Learning for Whole-slide Pathological Image Classification</a>
-                    <span>Medical Image Analysis 2025 · Contributor</span>
+                    <span>Medical Image Analysis 2025 · Contributor. Contributes to attention-based multiple-instance learning for whole-slide pathology image classification.</span>
                   </li>
                   <li>
                     <a href="https://arxiv.org/abs/2508.12381" target="_blank" rel="noopener">IPGPhormer: Interpretable Pathology Graph-Transformer for Survival Analysis</a>
-                    <span>arXiv 2025 · Contributor</span>
+                    <span>arXiv 2025 · Contributor. Contributes to interpretable graph-transformer modeling for pathology-based survival analysis.</span>
+                  </li>
+                  <li>
+                    <a href="https://arxiv.org/abs/2309.05446" target="_blank" rel="noopener">A Localization-to-Segmentation Framework for Automatic Tumor Segmentation in Whole-Body PET/CT Images</a>
+                    <span>arXiv 2023 · Contributor. Contributes to a localization-to-segmentation cascade for automatic whole-body PET/CT tumor segmentation.</span>
                   </li>
                 </ul>
               </div>
@@ -415,34 +391,34 @@
 
         <section id="methods" class="section">
           <div class="section-heading">
-            <h2>Methods / Technical Stack</h2>
+            <h2>Methods / Engineering Profile</h2>
           </div>
           <div class="skill-groups">
             <div>
-              <h3>Research</h3>
-              <p>World model evaluation, VLM/VLA representation diagnosis, multimodal foundation-model transfer, efficient 3D medical vision, self-supervised learning.</p>
+              <h3>Evaluation Design</h3>
+              <p>I build diagnostic benchmarks and protocols that separate task setup, observable evidence, judgeability, and model failure modes, especially for world models and embodied multimodal systems.</p>
             </div>
             <div>
-              <h3>Engineering</h3>
-              <p>Python, PyTorch, CUDA, Shell/Bash, LaTeX, distributed training, evaluation pipelines, reproducible experiments, ablation design.</p>
+              <h3>Model Engineering</h3>
+              <p>I design efficient 3D perception modules, multimodal fusion blocks, and representation analyses in PyTorch/CUDA, with ablations tied to the specific behavior being measured.</p>
             </div>
             <div>
-              <h3>Tools</h3>
-              <p>Linux, Git, Docker, Weights &amp; Biases / TensorBoard-style experiment tracking, common visual and multimodal data-processing toolchains.</p>
+              <h3>Reproducible Systems</h3>
+              <p>I maintain experiment pipelines, artifact releases, leaderboards, and data-processing workflows with Linux, Git, Docker, Shell/Bash, LaTeX, and experiment tracking tools.</p>
             </div>
           </div>
         </section>
 
         <section id="visitors" class="section visitor-section">
           <div class="section-heading">
-            <h2>Visitors</h2>
-            <p>Visitor map, counts, and approximate visit location.</p>
+            <h2>Site Visitors</h2>
+            <p>Approximate visitor map and page-view counter.</p>
           </div>
           <div class="visitor-panel">
             <div class="visitor-location">
-              <h3>Your Visit</h3>
+              <h3>Approximate Location</h3>
               <p id="visitor-location" aria-live="polite">Approximate location: loading...</p>
-              <p class="visitor-note">IP-based location is approximate; this page does not display your raw IP address.</p>
+              <p class="visitor-note">Location is estimated from public IP geolocation and may be imprecise; this page does not display your raw IP address.</p>
             </div>
             <a class="visitor-map" href="https://flagcounter.com/" target="_blank" rel="noopener" aria-label="Open Flag Counter">
               <img
