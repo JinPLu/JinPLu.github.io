@@ -1,0 +1,31 @@
+name: Update Scholar metrics
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update-scholar-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Update homepage citation badges
+        run: python3 tools/update_scholar_metrics.py
+
+      - name: Commit metric updates
+        run: |
+          if git diff --quiet -- index.html; then
+            echo "Scholar metrics are already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Update Scholar metrics"
+          git push

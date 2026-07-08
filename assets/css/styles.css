@@ -656,6 +656,10 @@ h2 {
   font-weight: 700;
 }
 
+.additional-publications .pub-metrics {
+  margin: 0.25rem 0 0.25rem;
+}
+
 .additional-publications span {
   display: block;
   color: var(--muted);
