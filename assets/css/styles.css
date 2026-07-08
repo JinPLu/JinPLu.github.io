@@ -656,6 +656,16 @@ h2 {
   font-weight: 700;
 }
 
+.additional-publications .additional-authors {
+  margin-top: 0.12rem;
+  color: var(--text);
+  font-size: 0.94rem;
+}
+
+.additional-publications .additional-authors strong {
+  color: var(--heading);
+}
+
 .additional-publications .pub-metrics {
   margin: 0.25rem 0 0.25rem;
 }
