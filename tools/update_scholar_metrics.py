@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import html
+import os
 import re
 import sys
 import time
@@ -190,6 +191,11 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Parse and report metrics without writing the homepage.",
     )
+    parser.add_argument(
+        "--allow-fetch-failure",
+        action="store_true",
+        help="Exit successfully without changes if Google Scholar blocks the fetch.",
+    )
     return parser.parse_args()
 
 
@@ -199,7 +205,20 @@ def main() -> int:
     if args.scholar_html:
         scholar_html = Path(args.scholar_html).read_text(encoding="utf-8")
     else:
-        scholar_html = fetch_scholar_profile(args.user)
+        try:
+            scholar_html = fetch_scholar_profile(args.user)
+        except RuntimeError as error:
+            if not args.allow_fetch_failure:
+                raise
+            message = (
+                "Google Scholar metrics were not updated because the profile "
+                f"fetch failed: {error}"
+            )
+            if os.environ.get("GITHUB_ACTIONS"):
+                print(f"::warning::{message}")
+            else:
+                print(f"Warning: {message}", file=sys.stderr)
+            return 0
 
     metrics = parse_profile_metrics(scholar_html, args.user)
     homepage_html = homepage_path.read_text(encoding="utf-8")

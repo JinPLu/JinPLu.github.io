@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Update homepage citation badges
-        run: python3 tools/update_scholar_metrics.py
+        run: python3 tools/update_scholar_metrics.py --allow-fetch-failure
 
       - name: Commit metric updates
         run: |

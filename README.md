@@ -34,10 +34,14 @@ python3 homepage/tools/update_scholar_metrics.py
 ```
 
 When this `homepage/` directory is copied to the `JinPLu.github.io` repository,
-the included GitHub Actions workflow can also refresh the same badges daily and
-commit only when the numbers change. It updates the total citation badge,
-h-index/i10-index text, and per-paper citation badges matched by Scholar
+the included GitHub Actions workflow can also try to refresh the same badges
+daily and commit only when the numbers change. It updates the total citation
+badge, h-index/i10-index text, and per-paper citation badges matched by Scholar
 `citation_for_view` IDs.
+
+Google Scholar may return HTTP 403 to GitHub-hosted runners. In that case the
+workflow emits a warning and exits successfully without changing the page, while
+manual/local runs still fail fast unless `--allow-fetch-failure` is supplied.
 
 ## Notes
 
