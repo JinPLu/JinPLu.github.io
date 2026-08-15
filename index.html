@@ -23,15 +23,16 @@
     <header class="site-header">
       <nav class="navbar" aria-label="Primary navigation">
         <a class="brand" href="#about">Homepage</a>
-        <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">
           <span></span>
           <span></span>
           <span></span>
         </button>
-        <div class="nav-links">
+        <div class="nav-links" id="primary-navigation">
           <a href="#about">About Me</a>
           <a href="#news">News</a>
           <a href="#publications">Publications</a>
+          <a href="#tools">Tools</a>
           <a href="#research">Research</a>
           <a href="#education">Education</a>
           <a href="#methods">Approach</a>
@@ -426,6 +427,64 @@
           </p>
         </section>
 
+        <section id="tools" class="section open-source-section" aria-labelledby="tools-heading">
+          <div class="section-heading">
+            <h2 id="tools-heading">🧰 Open-source Work</h2>
+            <p>I build and maintain small tools around recurring problems in AI-agent and research workflows.</p>
+          </div>
+
+          <div class="open-source-rail-toolbar">
+            <p id="tools-rail-hint">Use the controls or scrollbar to browse more projects.</p>
+            <div class="project-rail-controls" aria-label="Open-source project controls">
+              <button class="project-rail-button" type="button" data-project-rail-control="previous" aria-controls="open-source-rail" aria-label="Show previous projects">
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+              </button>
+              <button class="project-rail-button" type="button" data-project-rail-control="next" aria-controls="open-source-rail" aria-label="Show more projects">
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+
+          <div id="open-source-rail" class="open-source-grid" data-project-rail role="region" aria-label="Selected open-source projects" aria-describedby="tools-rail-hint" tabindex="0">
+            <article class="open-source-card">
+              <p class="project-kicker"><span class="project-index">01</span> Built for shared GPU access</p>
+              <h3>ServerPilot</h3>
+              <p>I built ServerPilot as an MCP and desktop control plane for coordinating GPU access across multiple servers with human oversight.</p>
+              <p class="project-link">
+                <a href="https://github.com/JinPLu/ServerPilot" target="_blank" rel="noopener">
+                  Explore ServerPilot <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span>
+                </a>
+              </p>
+            </article>
+
+            <article class="open-source-card">
+              <p class="project-kicker"><span class="project-index">02</span> Built for deliberate agent work</p>
+              <h3>Teamwork</h3>
+              <p>I developed Teamwork so research, debugging, planning, and review enter a Codex workflow only when the task calls for them.</p>
+              <p class="project-link">
+                <a href="https://github.com/JinPLu/Teamwork" target="_blank" rel="noopener">
+                  Explore Teamwork <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span>
+                </a>
+              </p>
+            </article>
+
+            <article class="open-source-card">
+              <p class="project-kicker"><span class="project-index">03</span> Built for critical paper reading</p>
+              <h3>Clear-Eyed Reading Skills</h3>
+              <p>I created these skills to map and independently test a paper's candidate contributions before explaining its mechanism, novelty, and results.</p>
+              <p class="project-link">
+                <a href="https://github.com/JinPLu/clear-eyed-reading-skills" target="_blank" rel="noopener">
+                  Explore the project <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span>
+                </a>
+              </p>
+            </article>
+          </div>
+
+          <p class="full-list-link">
+            → <a href="https://github.com/JinPLu?tab=repositories" target="_blank" rel="noopener">More on GitHub <span class="sr-only">(opens in a new tab)</span></a>
+          </p>
+        </section>
+
         <section id="research" class="section">
           <div class="section-heading">
             <h2>🔬 Research</h2>
@@ -570,6 +629,31 @@
           toggle.setAttribute('aria-expanded', 'false');
           links.classList.remove('is-open');
         });
+      });
+
+      document.querySelectorAll('[data-project-rail]').forEach((rail) => {
+        const section = rail.closest('.open-source-section');
+        const previous = section.querySelector('[data-project-rail-control="previous"]');
+        const next = section.querySelector('[data-project-rail-control="next"]');
+
+        const updateControls = () => {
+          const maximumScroll = rail.scrollWidth - rail.clientWidth;
+          previous.disabled = rail.scrollLeft <= 1;
+          next.disabled = rail.scrollLeft >= maximumScroll - 1;
+        };
+
+        const scrollProjects = (direction) => {
+          const card = rail.querySelector('.open-source-card');
+          const gap = Number.parseFloat(getComputedStyle(rail).gap) || 0;
+          const distance = card ? card.offsetWidth + gap : rail.clientWidth * 0.8;
+          rail.scrollBy({ left: direction * distance, behavior: 'smooth' });
+        };
+
+        previous.addEventListener('click', () => scrollProjects(-1));
+        next.addEventListener('click', () => scrollProjects(1));
+        rail.addEventListener('scroll', updateControls, { passive: true });
+        window.addEventListener('resize', updateControls);
+        updateControls();
       });
 
       const visitorLocation = document.getElementById('visitor-location');
