@@ -169,15 +169,13 @@ strong {
 }
 
 .avatar {
-  width: min(180px, 72vw);
-  aspect-ratio: 1;
+  width: min(145px, 58vw);
+  height: auto;
   display: block;
   margin: 0 0 0.9rem;
-  padding: 5px;
+  padding: 4px;
   border: 1px solid var(--line);
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center 24%;
+  border-radius: 4px;
   background: #fff;
 }
 
@@ -1035,7 +1033,7 @@ h2 {
   }
 
   .avatar {
-    width: 150px;
+    width: 125px;
   }
 
   .profile-links {
