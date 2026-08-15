@@ -106,7 +106,8 @@
             </p>
             <p>
               I design diagnostic benchmarks and analyze model representations and behavior. My first-author work
-              <strong>WRBench</strong> studies world-state persistence under viewpoint changes. I also co-authored
+              <strong>WRBench</strong> treats camera motion as an observational intervention: the view may change, but a
+              task-relevant event state should continue to evolve coherently. I also co-authored
               <strong>VLA-Trace</strong> and <strong>Pelican-Unify 1.0</strong>. Earlier work in medical AI provides my
               foundation in efficient multimodal 3D perception.
             </p>
@@ -122,7 +123,7 @@
           <ul class="quick-facts" aria-label="Research highlights">
             <li>
               <strong>Open benchmark</strong>
-              <span>WRBench · 9,600 videos · 23 models · public benchmark and leaderboard</span>
+              <span>WRBench · 23 models · 4 view-synthesis paradigms · 9,600 videos</span>
             </li>
             <li>
               <strong>Embodied AI</strong>
@@ -140,7 +141,7 @@
             <h2>🔥 News</h2>
           </div>
           <ul class="news-list">
-            <li><time>2026.06</time><span>Released first-author work <strong><a href="https://arxiv.org/abs/2606.20545" target="_blank" rel="noopener">Current World Models Lack a Persistent State Core</a></strong> and <strong><a href="https://jinplu.github.io/WRBench/" target="_blank" rel="noopener">WRBench</a></strong>. The public benchmark tests whether video models preserve changing world states across viewpoint changes.</span></li>
+            <li><time>2026.06</time><span>Released first-author work <strong><a href="https://arxiv.org/abs/2606.20545" target="_blank" rel="noopener">Current World Models Lack a Persistent State Core</a></strong> and <strong><a href="https://jinplu.github.io/WRBench/" target="_blank" rel="noopener">WRBench</a></strong>, a diagnostic benchmark that asks whether camera changes alter only what is seen rather than the event being generated.</span></li>
             <li><time>2026.05</time><span>Co-authored <strong><a href="https://arxiv.org/abs/2605.30117" target="_blank" rel="noopener">VLA-Trace</a></strong> on representation-to-behavior tracing and <strong><a href="https://arxiv.org/abs/2605.15153" target="_blank" rel="noopener">Pelican-Unify 1.0</a></strong> on joint future-video and action generation.</span></li>
             <li><time>2026.01</time><span><strong><a href="https://arxiv.org/abs/2509.22307" target="_blank" rel="noopener">Johnson-Lindenstrauss Lemma Guided Network for Efficient 3D Medical Segmentation</a></strong> accepted to ICLR 2026.</span></li>
             <li><time>2024.03</time><span><strong><a href="https://doi.org/10.1007/978-3-031-72111-3_30" target="_blank" rel="noopener">H2ASeg</a></strong> accepted to MICCAI 2024 as an early-accept paper.</span></li>
@@ -187,9 +188,9 @@
                       </a>
                     </div>
                     <ul class="pub-summary" aria-label="Project summary">
-                      <li><strong>Question:</strong> Do video generation models preserve an evolving world state when the camera changes what is visible?</li>
-                      <li><strong>Approach:</strong> WRBench uses controlled camera motion and human-calibrated tests to evaluate visual integrity and state consistency after re-observation.</li>
-                      <li><strong>Finding:</strong> Across 9,600 videos from 23 models, visual quality and successful re-observation did not reliably imply correct event-state consistency.</li>
+                      <li><strong>Question:</strong> When the camera changes only what is observed, does one task-relevant event state continue to evolve coherently?</li>
+                      <li><strong>Approach:</strong> WRBench separates camera execution, visual integrity, visible evolution, re-observation support, and conditional endpoint consistency across four native camera-control interfaces.</li>
+                      <li><strong>Finding:</strong> Across 9,600 videos from 23 models, better view synthesis and re-observation support did not reliably yield correct event endpoints.</li>
                     </ul>
                     <div class="pub-links">
                       <a href="https://arxiv.org/abs/2606.20545" target="_blank" rel="noopener">Paper</a>
@@ -434,16 +435,16 @@
           <div class="focus-list">
             <article class="focus-item">
               <h3>🌍 Video World Models &amp; Generative Video Evaluation</h3>
-              <p class="focus-subtitle">Testing whether generated worlds remain coherent when the viewpoint changes.</p>
+              <p class="focus-subtitle">Testing whether one event remains coherent when only the observation changes.</p>
               <p>
-                I study whether video generation models preserve evolving world states when subjects leave the field of view
-                and later reappear. <strong>WRBench</strong> treats camera motion as a controlled change in what the model can
-                observe, then tests whether events remain correctly represented after re-observation.
+                I study whether video generation models maintain a single evolving, task-relevant world state when a target
+                is visible, temporarily unobservable, and later reobserved. <strong>WRBench</strong> treats camera motion as an
+                observational intervention: it should change what is seen, not rewrite the event itself.
               </p>
               <p>
-                The benchmark separates camera control and visual integrity from the harder question of state persistence.
-                This research combines human-calibrated evaluation, open benchmark resources, and failure analysis across
-                model families and camera-control settings.
+                The benchmark separates camera execution, visual integrity, visible spatial/state evolution, re-observation
+                support, and conditional endpoint consistency. It uses open-weight evaluators calibrated with 4,302 human
+                judgments over 1,741 video pairs to diagnose failure modes across model families and camera-control settings.
               </p>
             </article>
 
