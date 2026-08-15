@@ -744,29 +744,18 @@ h2 {
   width: 100%;
   max-width: 100%;
   display: grid;
-  grid-auto-columns: minmax(260px, calc((100% - 0.75rem) / 2.35));
+  grid-auto-columns: minmax(0, calc((100% - 1.5rem) / 3));
   grid-auto-flow: column;
   gap: 0.75rem;
   overflow-x: auto;
   overscroll-behavior-x: contain;
-  padding: 0 0.35rem 0.8rem 0;
-  scroll-snap-type: x proximity;
-  scrollbar-color: var(--line-strong) var(--surface-soft);
-  scrollbar-width: thin;
+  padding: 0;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
 }
 
 .open-source-grid::-webkit-scrollbar {
-  height: 0.6rem;
-}
-
-.open-source-grid::-webkit-scrollbar-track {
-  background: var(--surface-soft);
-}
-
-.open-source-grid::-webkit-scrollbar-thumb {
-  border: 2px solid var(--surface-soft);
-  border-radius: 999px;
-  background: var(--line-strong);
+  display: none;
 }
 
 .open-source-rail-toolbar {
@@ -787,6 +776,14 @@ h2 {
   display: flex;
   flex: 0 0 auto;
   gap: 0.35rem;
+}
+
+.project-rail-counter {
+  min-width: 2.8rem;
+  color: var(--muted);
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.78rem;
+  text-align: center;
 }
 
 .project-rail-button {
@@ -826,7 +823,7 @@ h2 {
 
 .open-source-card {
   display: flex;
-  min-height: 13.65rem;
+  min-height: 11.85rem;
   flex-direction: column;
   min-width: 0;
   padding: 1rem;
@@ -838,7 +835,7 @@ h2 {
 }
 
 .open-source-card h3 {
-  margin: 0 0 0.45rem;
+  margin: 0 0 0.38rem;
   color: var(--heading);
   font-family: inherit;
   font-size: 1.08rem;
@@ -853,7 +850,7 @@ h2 {
 .open-source-card p {
   margin: 0;
   color: var(--text);
-  font-size: 0.94rem;
+  font-size: 0.9rem;
   line-height: 1.45;
 }
 
@@ -861,14 +858,17 @@ h2 {
   display: flex;
   align-items: center;
   gap: 0.45rem;
-  margin: 0 0 0.85rem;
+  margin: 0 0 0.55rem;
   padding: 0;
   color: var(--muted);
   font-family: "Roboto Mono", monospace;
-  font-size: 0.73rem;
+  font-size: 0.68rem;
   letter-spacing: 0.025em;
   line-height: 1.35;
   text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .project-index {
@@ -878,7 +878,7 @@ h2 {
 
 .project-link {
   margin: auto 0 0;
-  padding-top: 0.9rem;
+  padding-top: 0.7rem;
 }
 
 .project-link a {
