@@ -4,23 +4,20 @@
 from __future__ import annotations
 
 import argparse
-import html
+import json
 import os
 import re
-import sys
 import time
 from dataclasses import dataclass
 from pathlib import Path
 from urllib.error import HTTPError, URLError
+from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 
-SCHOLAR_URL = "https://scholar.google.com/citations"
+SERPAPI_URL = "https://serpapi.com/search.json"
 DEFAULT_USER_ID = "wnc_GPkAAAAJ"
-USER_AGENT = (
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
-)
+API_KEY_ENV = "SERPAPI_API_KEY"
 
 
 @dataclass(frozen=True)
@@ -31,63 +28,68 @@ class ScholarMetrics:
     papers: dict[str, int]
 
 
-def fetch_scholar_profile(user_id: str, retries: int = 2) -> str:
-    url = f"{SCHOLAR_URL}?hl=en&user={user_id}&pagesize=100"
-    request = Request(url, headers={"User-Agent": USER_AGENT})
+def fetch_scholar_payload(user_id: str, api_key: str, retries: int = 2) -> dict:
+    query = urlencode(
+        {
+            "engine": "google_scholar_author",
+            "author_id": user_id,
+            "hl": "en",
+            "num": 100,
+            "api_key": api_key,
+        }
+    )
+    request = Request(f"{SERPAPI_URL}?{query}")
     last_error: Exception | None = None
 
     for attempt in range(retries + 1):
         try:
-            with urlopen(request, timeout=25) as response:
-                return response.read().decode("utf-8", "replace")
-        except (HTTPError, URLError, TimeoutError) as error:
+            with urlopen(request, timeout=40) as response:
+                return json.loads(response.read().decode("utf-8"))
+        except HTTPError as error:
+            detail = error.read().decode("utf-8", "replace").strip()[:300]
+            last_error = RuntimeError(f"HTTP {error.code}: {detail}")
+        except (URLError, TimeoutError, json.JSONDecodeError) as error:
             last_error = error
-            if attempt < retries:
-                time.sleep(1.5 * (attempt + 1))
+        if attempt < retries:
+            time.sleep(1.5 * (attempt + 1))
 
-    raise RuntimeError(f"Could not fetch Google Scholar profile: {last_error}")
-
-
-def strip_tags(value: str) -> str:
-    return html.unescape(re.sub(r"<[^>]+>", "", value)).strip()
+    raise RuntimeError(f"Could not fetch Scholar metrics from SerpApi: {last_error}")
 
 
-def parse_profile_metrics(scholar_html: str, user_id: str) -> ScholarMetrics:
-    metric_rows = re.findall(
-        r'<td class="gsc_rsb_sc1">.*?>(Citations|h-index|i10-index)</a></td>'
-        r'<td class="gsc_rsb_std">(\d+)</td>',
-        scholar_html,
-        flags=re.S,
-    )
-    metrics = {name: int(value) for name, value in metric_rows}
-    missing = {"Citations", "h-index", "i10-index"} - metrics.keys()
+def parse_metrics(payload: dict, user_id: str) -> ScholarMetrics:
+    if payload.get("error"):
+        raise RuntimeError(f"SerpApi reported an error: {payload['error']}")
+
+    status = payload.get("search_metadata", {}).get("status")
+    if status != "Success":
+        raise RuntimeError(f"SerpApi search did not succeed: status={status!r}")
+
+    profile: dict[str, int] = {}
+    for row in payload.get("cited_by", {}).get("table", []):
+        for name, values in row.items():
+            total = values.get("all")
+            if total is not None:
+                profile[name] = int(total)
+
+    missing = sorted({"citations", "h_index", "i10_index"} - profile.keys())
     if missing:
-        raise RuntimeError(f"Could not parse Scholar profile metrics: {sorted(missing)}")
+        raise RuntimeError(f"SerpApi response is missing profile metrics: {missing}")
 
-    paper_counts: dict[str, int] = {}
-    rows = re.findall(r'<tr class="gsc_a_tr">(.*?)</tr>', scholar_html, flags=re.S)
-    id_pattern = re.compile(
-        rf"citation_for_view={re.escape(user_id)}:([A-Za-z0-9_-]+)"
-    )
-
-    for row in rows:
-        id_match = id_pattern.search(row)
-        if not id_match:
+    papers: dict[str, int] = {}
+    for article in payload.get("articles", []):
+        author_id, _, paper_id = article.get("citation_id", "").partition(":")
+        if author_id != user_id or not paper_id:
             continue
-        count_match = re.search(
-            r'<td class="gsc_a_c">(?:<a [^>]*class="gsc_a_ac[^"]*"[^>]*>)?'
-            r'(\d*)',
-            row,
-            flags=re.S,
-        )
-        if count_match:
-            paper_counts[id_match.group(1)] = int(count_match.group(1) or "0")
+        papers[paper_id] = int((article.get("cited_by") or {}).get("value") or 0)
+
+    if not papers:
+        raise RuntimeError(f"SerpApi response listed no articles for author {user_id}")
 
     return ScholarMetrics(
-        citations=metrics["Citations"],
-        h_index=metrics["h-index"],
-        i10_index=metrics["i10-index"],
-        papers=paper_counts,
+        citations=profile["citations"],
+        h_index=profile["h_index"],
+        i10_index=profile["i10_index"],
+        papers=papers,
     )
 
 
@@ -158,10 +160,15 @@ def update_homepage(homepage_html: str, metrics: ScholarMetrics, user_id: str) -
             f"Expected to update 1 profile citation badge, updated {profile_replacements}."
         )
 
-    notes = [f"profile=1", f"paper_badges={paper_replacements}"]
+    # A homepage id absent from the profile means Scholar re-issued that entry: the badge
+    # would freeze and its link would 404, so this has to be fixed rather than skipped.
     if missing:
-        notes.append("missing_paper_ids=" + ",".join(missing))
-    return updated, notes
+        raise RuntimeError(
+            "Homepage badges reference Scholar entries that the profile no longer lists: "
+            + ", ".join(missing)
+        )
+
+    return updated, [f"profile={profile_replacements}", f"paper_badges={paper_replacements}"]
 
 
 def default_homepage_path() -> Path:
@@ -172,7 +179,10 @@ def default_homepage_path() -> Path:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Fetch Google Scholar metrics and update homepage citation badges."
+        description=(
+            "Fetch Google Scholar metrics through the SerpApi Google Scholar Author API "
+            "and update the homepage citation badges."
+        )
     )
     parser.add_argument("--user", default=DEFAULT_USER_ID, help="Google Scholar user id.")
     parser.add_argument(
@@ -183,18 +193,13 @@ def parse_args() -> argparse.Namespace:
         ),
     )
     parser.add_argument(
-        "--scholar-html",
-        help="Optional saved Scholar HTML file for offline/reproducible updates.",
+        "--metrics-json",
+        help="Saved SerpApi response for offline or reproducible updates.",
     )
     parser.add_argument(
         "--check",
         action="store_true",
         help="Parse and report metrics without writing the homepage.",
-    )
-    parser.add_argument(
-        "--allow-fetch-failure",
-        action="store_true",
-        help="Exit successfully without changes if Google Scholar blocks the fetch.",
     )
     return parser.parse_args()
 
@@ -202,25 +207,19 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     args = parse_args()
     homepage_path = Path(args.homepage) if args.homepage else default_homepage_path()
-    if args.scholar_html:
-        scholar_html = Path(args.scholar_html).read_text(encoding="utf-8")
-    else:
-        try:
-            scholar_html = fetch_scholar_profile(args.user)
-        except RuntimeError as error:
-            if not args.allow_fetch_failure:
-                raise
-            message = (
-                "Google Scholar metrics were not updated because the profile "
-                f"fetch failed: {error}"
-            )
-            if os.environ.get("GITHUB_ACTIONS"):
-                print(f"::warning::{message}")
-            else:
-                print(f"Warning: {message}", file=sys.stderr)
-            return 0
 
-    metrics = parse_profile_metrics(scholar_html, args.user)
+    if args.metrics_json:
+        payload = json.loads(Path(args.metrics_json).read_text(encoding="utf-8"))
+    else:
+        api_key = os.environ.get(API_KEY_ENV, "").strip()
+        if not api_key:
+            raise RuntimeError(
+                f"{API_KEY_ENV} is not set. Export the SerpApi key, or pass --metrics-json "
+                "to update from a saved response."
+            )
+        payload = fetch_scholar_payload(args.user, api_key)
+
+    metrics = parse_metrics(payload, args.user)
     homepage_html = homepage_path.read_text(encoding="utf-8")
     updated, notes = update_homepage(homepage_html, metrics, args.user)
 
@@ -233,7 +232,7 @@ def main() -> int:
 
     if args.check:
         if updated != homepage_html:
-            print("Homepage is not up to date.", file=sys.stderr)
+            print("Homepage is not up to date.")
             return 1
         print("Homepage is up to date.")
         return 0

@@ -27,21 +27,27 @@ Then visit `http://127.0.0.1:4173/`.
 ## Scholar Metrics
 
 Google Scholar citation counts in `index.html` are static badge URLs. GitHub Pages
-does not refresh them by itself. Update them before publishing with:
+does not refresh them by itself. The numbers come from the SerpApi Google Scholar
+Author API, because Google Scholar answers GitHub-hosted runners with HTTP 403.
+Update them with:
 
 ```bash
-python3 homepage/tools/update_scholar_metrics.py
+SERPAPI_API_KEY=... python3 homepage/tools/update_scholar_metrics.py
 ```
 
-When this `homepage/` directory is copied to the `JinPLu.github.io` repository,
-the included GitHub Actions workflow can also try to refresh the same badges
-daily and commit only when the numbers change. It updates the total citation
-badge, h-index/i10-index text, and per-paper citation badges matched by Scholar
-`citation_for_view` IDs.
+Pass `--metrics-json` with a saved SerpApi response to update offline, and
+`--check` to report the numbers without writing the page.
 
-Google Scholar may return HTTP 403 to GitHub-hosted runners. In that case the
-workflow emits a warning and exits successfully without changing the page, while
-manual/local runs still fail fast unless `--allow-fetch-failure` is supplied.
+When this `homepage/` directory is copied to the `JinPLu.github.io` repository,
+the included GitHub Actions workflow refreshes the same badges daily and commits
+only when the numbers change; it reads the key from the `SERPAPI_API_KEY`
+repository secret. It updates the total citation badge, h-index/i10-index text,
+and per-paper citation badges matched by Scholar `citation_for_view` IDs.
+
+The updater fails instead of quietly doing nothing: a failed fetch, an
+unparseable response, or a homepage badge whose `citation_for_view` id is no
+longer in the profile all stop the run. The last case means Scholar re-issued
+that entry, so both the badge and its link need the new id.
 
 ## Notes
 
