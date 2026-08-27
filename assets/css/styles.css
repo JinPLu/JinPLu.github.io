@@ -744,7 +744,7 @@ h2 {
   width: 100%;
   max-width: 100%;
   display: grid;
-  grid-auto-columns: minmax(0, calc((100% - 1.5rem) / 3));
+  grid-auto-columns: calc((100% - 1.5rem) / 3);
   grid-auto-flow: column;
   gap: 0.75rem;
   overflow-x: auto;
