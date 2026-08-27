@@ -599,12 +599,16 @@
           card.getBoundingClientRect().left - rail.getBoundingClientRect().left + rail.scrollLeft
         );
 
-        const currentPage = () => {
-          const pageStarts = Array.from({ length: pageCount() }, (_, page) => cards[page * projectsPerPage()]);
-          return pageStarts.reduce((closest, card, page) => (
-            Math.abs(cardScrollPosition(card) - rail.scrollLeft) < Math.abs(cardScrollPosition(pageStarts[closest]) - rail.scrollLeft) ? page : closest
-          ), 0);
-        };
+        const pageScrollPosition = (page) => Math.min(
+          cardScrollPosition(cards[page * projectsPerPage()]),
+          rail.scrollWidth - rail.clientWidth
+        );
+
+        const currentPage = () => (
+          Array.from({ length: pageCount() }, (_, page) => page).reduce((closest, page) => (
+            Math.abs(pageScrollPosition(page) - rail.scrollLeft) < Math.abs(pageScrollPosition(closest) - rail.scrollLeft) ? page : closest
+          ), 0)
+        );
 
         const updateControls = () => {
           const page = currentPage();
@@ -616,7 +620,7 @@
 
         const showProjectPage = (direction) => {
           const target = Math.max(0, Math.min(pageCount() - 1, currentPage() + direction));
-          rail.scrollTo({ left: cardScrollPosition(cards[target * projectsPerPage()]), behavior: 'smooth' });
+          rail.scrollTo({ left: pageScrollPosition(target), behavior: 'smooth' });
         };
 
         previous.addEventListener('click', () => showProjectPage(-1));
