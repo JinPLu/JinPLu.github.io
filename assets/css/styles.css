@@ -247,19 +247,22 @@ strong {
 .current-focus {
   margin-top: 0.9rem !important;
   padding: 0;
+  color: inherit;
+  font-weight: 400;
+}
+
+.current-focus strong,
+.current-focus a {
   color: var(--focus-ink);
-  font-weight: 700;
 }
 
 .current-focus a {
-  color: inherit;
-  font-weight: inherit;
+  font-weight: 700;
   text-decoration: none;
 }
 
 .current-focus a:hover,
 .current-focus a:focus {
-  color: var(--focus-ink);
   text-decoration: underline;
 }
 
@@ -967,6 +970,15 @@ h2 {
 
 .timeline-item p {
   margin: 0;
+}
+
+.experience-details {
+  margin: 0.55rem 0 0;
+  padding-left: 1.15rem;
+}
+
+.experience-details li + li {
+  margin-top: 0.45rem;
 }
 
 .visitor-panel {
