@@ -138,7 +138,7 @@
             <li><time>2026.06</time><span>Released my first-author paper <strong><a href="https://arxiv.org/abs/2606.20545" target="_blank" rel="noopener">Current World Models Lack a Persistent State Core</a></strong>, introducing <a href="https://jinplu.github.io/WRBench/" target="_blank" rel="noopener">WRBench</a> to evaluate whether event states persist under viewpoint changes.</span></li>
             <li><time>2026.05</time><span>Co-authored <strong><a href="https://arxiv.org/abs/2605.30117" target="_blank" rel="noopener">VLA-Trace</a></strong> on representation-to-behavior tracing and <strong><a href="https://arxiv.org/abs/2605.15153" target="_blank" rel="noopener">Pelican-Unify 1.0</a></strong> on joint future-video and action generation.</span></li>
             <li><time>2026.01</time><span><strong><a href="https://arxiv.org/abs/2509.22307" target="_blank" rel="noopener">Johnson-Lindenstrauss Lemma Guided Network for Efficient 3D Medical Segmentation</a></strong> accepted to ICLR 2026.</span></li>
-            <li><time>2024.03</time><span><strong><a href="https://doi.org/10.1007/978-3-031-72111-3_30" target="_blank" rel="noopener">H2ASeg</a></strong> accepted to MICCAI 2024 as an early-accept paper.</span></li>
+            <li><time>2024.03</time><span><strong><a href="https://doi.org/10.1007/978-3-031-72111-3_30" target="_blank" rel="noopener">H2ASeg</a></strong> accepted to MICCAI 2024 in the top 11% early-acceptance group.</span></li>
           </ul>
         </section>
 
@@ -204,9 +204,9 @@
                       </a>
                     </div>
                     <ul class="pub-summary" aria-label="Project summary">
-                      <li><strong>Question:</strong> When the camera changes only what is observed, does one task-relevant event state continue to evolve coherently?</li>
+                      <li><strong>Question:</strong> Is rendering decoupled from world-state evolution when camera motion changes only the observation?</li>
                       <li><strong>Approach:</strong> WRBench separates camera execution, visual integrity, visible evolution, re-observation support, and conditional endpoint consistency across four native camera-control interfaces.</li>
-                      <li><strong>Finding:</strong> Across 9,600 videos from 23 models, better view synthesis and re-observation support did not reliably yield correct event endpoints.</li>
+                      <li><strong>Finding:</strong> Across 9,600 videos from 23 models, viewpoint changes disrupted event evolution; better visuals and re-observation support did not reliably yield correct event endpoints.</li>
                     </ul>
                     <div class="pub-links">
                       <a href="https://arxiv.org/abs/2606.20545" target="_blank" rel="noopener">Paper</a>
@@ -336,9 +336,9 @@
                       </a>
                     </div>
                     <ul class="pub-summary" aria-label="Project summary">
-                      <li><strong>Task:</strong> Perform efficient multimodal 3D medical segmentation for volumetric PET/CT perception.</li>
-                      <li><strong>Method:</strong> Combine JL-guided convolution, paired window attention, and spatially decoupled knowledge transfer in VeloxSeg.</li>
-                      <li><strong>Result:</strong> Delivers a 1.66M-parameter segmentation model that keeps the architecture lightweight for 3D medical-image analysis.</li>
+                      <li><strong>Task:</strong> Preserve 3D representation quality and fine detail under a limited computational budget.</li>
+                      <li><strong>Method:</strong> Combine JL-guided convolution and multiscale multimodal attention; transfer reconstruction texture priors through Gram matrices to avoid spatial alignment conflicts across tasks.</li>
+                      <li><strong>Result:</strong> Distillation improves AutoPET-II Dice by 2.80 points with the same 1.66M-parameter architecture and no additional inference cost.</li>
                     </ul>
                     <div class="pub-links">
                       <a href="https://arxiv.org/abs/2509.22307" target="_blank" rel="noopener">Paper</a>
@@ -350,7 +350,7 @@
 
                 <article class="publication">
                   <a class="pub-figure" href="assets/papers/dinov3-petct-feature.pdf" target="_blank" rel="noopener" aria-label="Open DINOv3 medical feature source figure">
-                    <span class="badge badge-primary">Tech Report 2025</span>
+                    <span class="badge badge-primary">arXiv 2025</span>
                     <img src="assets/papers/previews/dinov3-petct-feature.png" alt="DINOv3 PET/CT feature source figure" loading="lazy">
                   </a>
                   <div class="pub-body">
@@ -369,9 +369,9 @@
                       </a>
                     </div>
                     <ul class="pub-summary" aria-label="Project summary">
-                      <li><strong>Task:</strong> Test whether DINOv3-style self-supervised visual features transfer reliably to medical vision tasks.</li>
-                      <li><strong>Method:</strong> Benchmark 2D and 3D classification, segmentation, and registration across multiple medical modalities.</li>
-                      <li><strong>Result:</strong> Identifies where transfer is useful, where task limits remain, and which modality gaps matter for medical foundation-model use.</li>
+                      <li><strong>Task:</strong> Test whether natural-image pretraining provides a general visual representation for medical tasks.</li>
+                      <li><strong>Method:</strong> Adapt frozen DINOv3 features to 2D/3D classification and 3D segmentation, comparing model scales and input resolutions.</li>
+                      <li><strong>Result:</strong> Surpasses medical-specific models on some tasks, but scaling gains vary and transfer remains limited in pathology, electron microscopy, and PET.</li>
                     </ul>
                     <div class="pub-links">
                       <a href="https://arxiv.org/abs/2509.06467" target="_blank" rel="noopener">Paper</a>
@@ -389,7 +389,7 @@
                   <div class="pub-body">
                     <div class="pub-meta">
                       <span class="badge badge-role">First Author</span>
-                      <span class="badge badge-ccf">CCF B</span>
+                      <a class="badge badge-ccf" href="https://conferences.miccai.org/2024/en/Update-on-MICCAI-2024-Paper-Reviews.html" target="_blank" rel="noopener" title="Approximately 11% of reviewed papers were early accepted">CCF-B, top 11%</a>
                       <span class="badge badge-period">2024.03</span>
                     </div>
                     <h3><a href="https://doi.org/10.1007/978-3-031-72111-3_30" target="_blank" rel="noopener">H2ASeg: Hierarchical Adaptive Interaction and Weighting Network for Tumor Segmentation in PET/CT Images</a></h3>
@@ -403,9 +403,9 @@
                       </a>
                     </div>
                     <ul class="pub-summary" aria-label="Project summary">
-                      <li><strong>Task:</strong> Segment tumor regions in paired PET/CT images under heterogeneous lesion appearance and modality imbalance.</li>
-                      <li><strong>Method:</strong> Use hierarchical adaptive interaction and weighting to fuse PET metabolic cues with CT anatomical structure.</li>
-                      <li><strong>Result:</strong> Improves robust lesion-region segmentation and establishes the medical-segmentation line that later led to VeloxSeg.</li>
+                      <li><strong>Task:</strong> Overcome limited information exchange between independent PET and CT encoders to exploit complementary semantic and structural cues.</li>
+                      <li><strong>Method:</strong> Use local and global bidirectional attention for cross-modal interaction, then adaptively select modality features by target relevance.</li>
+                      <li><strong>Result:</strong> Outperforms compared methods on AutoPET-II and Hecktor2022; ablations and weight analysis support hierarchical interaction and adaptive feature selection.</li>
                     </ul>
                     <div class="pub-links">
                       <a href="https://doi.org/10.1007/978-3-031-72111-3_30" target="_blank" rel="noopener">Paper</a>
