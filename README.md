@@ -19,8 +19,8 @@ Then visit `http://127.0.0.1:4173/`.
 - `assets/css/styles.css` - Hankai Liu-inspired blue-gray academic style, compact sidebar, and paper-box publication rows.
 - `assets/img/profile.jpg` - resized profile photo generated from `../figure/me.jpg`.
 - `assets/papers/` - original public arXiv TeX source figure assets plus full-page preview images.
-- `docs/jinpeng-lu-cv-cn.pdf` - public Chinese CV PDF matching the application version, including phone and QR-code contact details as authorized by the owner.
-- `docs/jinpeng-lu-cv-en.pdf` - public English CV PDF matching the application version, including phone and QR-code contact details as authorized by the owner.
+- `docs/jinpeng-lu-cv-cn.pdf` - public Chinese CV PDF matching the application version, with private phone and QR-code contact details omitted.
+- `docs/jinpeng-lu-cv-en.pdf` - public English CV PDF matching the application version, with private phone and QR-code contact details omitted.
 - `tools/update_scholar_metrics.py` - updates the static Google Scholar citation badges in `index.html`.
 - `.github/workflows/update-scholar-metrics.yml` - scheduled GitHub Actions workflow for the published Pages repository.
 
@@ -51,7 +51,7 @@ that entry, so both the badge and its link need the new id.
 
 ## Notes
 
-- On 2026-10-06, the owner explicitly authorized retaining phone and QR-code contact details in the public CV PDFs.
+- Current public CVs omit private phone and QR-code contact details, following the current repository instructions.
 - Public academic/resource links currently use the supplied Google Scholar profile and public GitHub repositories.
 - Selected publications use original source-figure previews with blue venue badges and text links.
 - The page is English-first and can later be ported to Hugo Blox or another static-site generator if needed.
