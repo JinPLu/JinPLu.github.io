@@ -4,6 +4,7 @@ These files were copied from public arXiv TeX source packages without manual cro
 
 | Local asset | arXiv source package | Original source path |
 |---|---|---|
+| `cat-movie-overview.png` | `2611.25620` | `JinPLu/CaT-Movie:assets/overview.png` |
 | `wrbench-teaser.pdf` | `2606.20545` | `figures/teaser3.pdf` |
 | `vlatrace-framework.pdf` | `2605.30117` | `figs/framework.pdf` |
 | `veloxseg-overview.pdf` | `2509.22307` | `figure/Overview.pdf` |
