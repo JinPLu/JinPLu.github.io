@@ -22,12 +22,16 @@ jobs:
 
       - name: Commit metric updates
         run: |
-          if git diff --quiet -- index.html; then
+          TARGETS="index.html"
+          if [ -f zh.html ]; then
+            TARGETS="$TARGETS zh.html"
+          fi
+          if git diff --quiet -- $TARGETS; then
             echo "Scholar metrics are already up to date."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html
+          git add $TARGETS
           git commit -m "Update Scholar metrics"
           git push

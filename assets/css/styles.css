@@ -37,11 +37,15 @@ body {
   overflow-x: clip;
   color: var(--text);
   background: #fff;
-  font-family: "Geist", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+  font-family: "Geist", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   font-size: 1rem;
   line-height: 1.58;
   font-variant-numeric: tabular-nums;
   -webkit-font-smoothing: antialiased;
+}
+
+html[lang="zh-CN"] body {
+  line-height: 1.72;
 }
 
 a {
@@ -120,10 +124,61 @@ strong {
 }
 
 .nav-links {
+  order: 2;
+  margin-left: auto;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 0.15rem;
+}
+
+.nav-actions {
+  order: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface-soft);
+  gap: 2px;
+}
+
+.lang-switch-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--muted);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.16s ease, color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.lang-switch-btn:hover,
+.lang-switch-btn:focus {
+  color: var(--accent-dark);
+  text-decoration: none;
+}
+
+.lang-switch-btn.is-active {
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 1px 4px rgba(64, 94, 142, 0.25);
+}
+
+.lang-switch-btn.is-active:hover,
+.lang-switch-btn.is-active:focus {
+  color: #ffffff;
 }
 
 .nav-links a {
@@ -1448,6 +1503,12 @@ h2 {
   .navbar {
     padding: 0.45rem 1rem;
     flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+  }
+
+  .nav-actions {
+    order: 2;
+    margin-left: auto;
   }
 
   .nav-toggle {
@@ -1455,6 +1516,8 @@ h2 {
   }
 
   .nav-links {
+    order: 3;
+    margin-left: 0;
     display: none;
     width: 100%;
     flex-direction: column;

@@ -171,10 +171,13 @@ def update_homepage(homepage_html: str, metrics: ScholarMetrics, user_id: str) -
     return updated, [f"profile={profile_replacements}", f"paper_badges={paper_replacements}"]
 
 
-def default_homepage_path() -> Path:
-    if Path("index.html").is_file():
-        return Path("index.html")
-    return Path("homepage/index.html")
+def default_homepage_paths() -> list[Path]:
+    primary = Path("index.html") if Path("index.html").is_file() else Path("homepage/index.html")
+    paths = [primary]
+    sibling_zh = primary.with_name("zh.html")
+    if sibling_zh.is_file():
+        paths.append(sibling_zh)
+    return paths
 
 
 def parse_args() -> argparse.Namespace:
@@ -187,9 +190,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--user", default=DEFAULT_USER_ID, help="Google Scholar user id.")
     parser.add_argument(
         "--homepage",
+        action="append",
         help=(
-            "Path to homepage HTML. Defaults to index.html when run inside "
-            "homepage/, otherwise homepage/index.html."
+            "Path to homepage HTML (repeatable). Defaults to index.html (plus sibling "
+            "zh.html if present) when run inside homepage/, otherwise homepage/index.html."
         ),
     )
     parser.add_argument(
@@ -206,7 +210,7 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
-    homepage_path = Path(args.homepage) if args.homepage else default_homepage_path()
+    homepage_paths = [Path(p) for p in args.homepage] if args.homepage else default_homepage_paths()
 
     if args.metrics_json:
         payload = json.loads(Path(args.metrics_json).read_text(encoding="utf-8"))
@@ -220,30 +224,32 @@ def main() -> int:
         payload = fetch_scholar_payload(args.user, api_key)
 
     metrics = parse_metrics(payload, args.user)
-    homepage_html = homepage_path.read_text(encoding="utf-8")
-    updated, notes = update_homepage(homepage_html, metrics, args.user)
-
     print(
         "Scholar metrics: "
         f"citations={metrics.citations}, h-index={metrics.h_index}, "
         f"i10-index={metrics.i10_index}, papers={len(metrics.papers)}"
     )
-    print("Homepage updates: " + ", ".join(notes))
 
-    if args.check:
-        if updated != homepage_html:
-            print("Homepage is not up to date.")
-            return 1
-        print("Homepage is up to date.")
-        return 0
+    out_of_date = False
+    for homepage_path in homepage_paths:
+        homepage_html = homepage_path.read_text(encoding="utf-8")
+        updated, notes = update_homepage(homepage_html, metrics, args.user)
+        print(f"Homepage updates ({homepage_path}): " + ", ".join(notes))
 
-    if updated != homepage_html:
-        homepage_path.write_text(updated, encoding="utf-8")
-        print(f"Updated {homepage_path}")
-    else:
-        print(f"No changes needed for {homepage_path}")
+        if args.check:
+            if updated != homepage_html:
+                print(f"{homepage_path} is not up to date.")
+                out_of_date = True
+            else:
+                print(f"{homepage_path} is up to date.")
+        else:
+            if updated != homepage_html:
+                homepage_path.write_text(updated, encoding="utf-8")
+                print(f"Updated {homepage_path}")
+            else:
+                print(f"No changes needed for {homepage_path}")
 
-    return 0
+    return 1 if out_of_date else 0
 
 
 if __name__ == "__main__":

@@ -1,0 +1,1146 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>卢锦鹏 | 可控视频生成与世界模型</title>
+    <meta
+      name="description"
+      content="卢锦鹏，中国科学技术大学硕士研究生，研究方向为可控与长时多镜头视频生成、视频与具身世界模型。"
+    >
+    <meta name="author" content="卢锦鹏">
+    <meta property="og:title" content="卢锦鹏 | 学术个人主页">
+    <meta property="og:description" content="可控多镜头视频生成、视频与具身世界模型及高效三维视觉表征。">
+    <meta property="og:type" content="profile">
+    <meta property="og:image" content="assets/img/profile.jpg">
+    <link rel="alternate" hreflang="en" href="index.html">
+    <link rel="alternate" hreflang="zh-CN" href="zh.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css?v=20261122-bilingual">
+  </head>
+  <body>
+    <header class="site-header" id="site-header">
+      <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+      <nav class="navbar" aria-label="主导航">
+        <a class="brand" href="#about">卢锦鹏</a>
+        <div class="nav-actions">
+          <div class="lang-switch" role="group" aria-label="语言切换">
+            <a class="lang-switch-btn" href="index.html" lang="en" data-lang-switch>EN</a>
+            <a class="lang-switch-btn is-active" href="zh.html" lang="zh-CN" aria-current="page">中文</a>
+          </div>
+          <button class="nav-toggle" type="button" aria-label="展开或收起导航菜单" aria-expanded="false" aria-controls="primary-navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <div class="nav-links" id="primary-navigation">
+          <a href="#about">简介</a>
+          <a href="#news">动态</a>
+          <a href="#experience">经历</a>
+          <a href="#publications">论文</a>
+          <a href="#tools">开源</a>
+          <a href="#education">教育</a>
+          <a href="#visitors">访客</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="site-layout">
+      <aside class="profile-column" aria-label="个人资料">
+        <section class="profile-card">
+          <img class="avatar" src="assets/img/profile.jpg" alt="卢锦鹏个人照片">
+          <h1>卢锦鹏</h1>
+          <p class="profile-role">中国科学技术大学 硕士研究生<br>视频生成与世界模型</p>
+
+          <ul class="profile-links" aria-label="个人链接">
+            <li>
+              <i class="fa-solid fa-school" aria-hidden="true"></i>
+              <span>中国科学技术大学 · 信息与通信工程硕士</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+              <span><a href="https://www.hitsz.edu.cn/" target="_blank" rel="noopener">哈尔滨工业大学（深圳）</a> · 数据科学本科（数学类）</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              <span class="email-row">
+                <a href="mailto:jinplu@mail.ustc.edu.cn">jinplu [at] mail.ustc.edu.cn</a>
+                <button class="copy-email-btn" type="button" id="copy-email-btn" data-email="jinplu@mail.ustc.edu.cn" aria-label="复制邮箱地址">复制</button>
+              </span>
+            </li>
+            <li>
+              <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+              <a href="https://scholar.google.com/citations?user=wnc_GPkAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+                Google Scholar
+              </a>
+            </li>
+            <li>
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+              <a href="https://github.com/JinPLu?tab=repositories" target="_blank" rel="noopener">
+                GitHub
+              </a>
+            </li>
+            <li>
+              <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+              <span>
+                <a href="docs/jinpeng-lu-cv-cn.pdf" target="_blank" rel="noopener">中文简历</a>
+                /
+                <a href="docs/jinpeng-lu-cv-en.pdf" target="_blank" rel="noopener">英文简历</a>
+              </span>
+            </li>
+          </ul>
+        </section>
+      </aside>
+
+      <div class="content-column">
+        <section id="about" class="section about-section">
+          <h2>👨‍🎓 个人简介</h2>
+          <div class="about-copy">
+            <p>
+              我目前是<a href="https://www.ustc.edu.cn/" target="_blank" rel="noopener">中国科学技术大学</a>信息与通信工程专业硕士研究生，本科毕业于<a href="https://www.hitsz.edu.cn/" target="_blank" rel="noopener">哈尔滨工业大学（深圳）</a>数据科学与大数据技术专业（数学类，排名前 10%）。
+            </p>
+            <p>
+              我的研究聚焦于<strong>可控与长时多镜头视频生成</strong>及<strong>视频与具身世界模型</strong>，关注跨切镜的持久实体状态规划、相机视角干预下的世界状态一致性，以及如何将未来视频预测通路转化为具身动作控制；同时研究高效三维视觉表征与跨任务知识蒸馏。
+            </p>
+            <p>
+              我以第一作者提出了 <a href="https://jinplu.github.io/CaT-Movie/" target="_blank" rel="noopener">CaT-Movie</a>（含 <a href="https://huggingface.co/datasets/JinPLU/CaT-MBench" target="_blank" rel="noopener">CaT-MBench</a>）与 <a href="https://jinplu.github.io/WRBench/" target="_blank" rel="noopener">WRBench</a>；在北京人形机器人创新中心（X-Humanoid）实习期间独立负责相机可控视频生成，并围绕一步 <strong>Cosmos3-Edge</strong> 具身世界动作模型开展受控机制诊断研究。相关成果以第一作者发表于 ICLR 2026、MICCAI 2024（前 11%），合作成果发表于 EMNLP 2026 与 <em>Medical Image Analysis</em> 2025。
+            </p>
+            <p class="current-focus">我目前正在寻找<strong>核心视频、多模态或世界模型基模研发</strong>方向的全职实习（对预训练、RL 后训练及研究课题均保持开放），也非常欢迎科研交流与合作。欢迎查看我的<a href="docs/jinpeng-lu-cv-cn.pdf" target="_blank" rel="noopener">中文简历</a> / <a href="docs/jinpeng-lu-cv-en.pdf" target="_blank" rel="noopener">英文简历</a>，或直接<a href="mailto:jinplu@mail.ustc.edu.cn">邮件联系</a>。</p>
+          </div>
+
+          <ul class="quick-facts" aria-label="研究方向">
+            <li>
+              <strong>可控与多镜头视频生成</strong>
+              <span>全局故事板状态规划、实体路由局部渲染、相机位姿条件建模与诊断基准（CaT-Movie、WRBench）。</span>
+            </li>
+            <li>
+              <strong>具身世界动作模型</strong>
+              <span>一步联合视频-动作策略、视频预测通路受控消融、因果路由诊断与 VLA 表征分析。</span>
+            </li>
+            <li>
+              <strong>高效三维视觉表征</strong>
+              <span>基于 JL 引理的轻量化三维算子设计、多尺度跨模态注意力与无对齐知识蒸馏。</span>
+            </li>
+          </ul>
+        </section>
+
+        <section id="news" class="section reveal-item">
+          <div class="section-heading">
+            <h2>🔥 最新动态</h2>
+          </div>
+          <ul class="news-list">
+            <li><time>2026.11</time><span>以第一作者发布长时多镜头视频生成论文 <strong><a href="https://arxiv.org/abs/2611.25620" target="_blank" rel="noopener">CaT-Movie</a></strong>（<a href="https://jinplu.github.io/CaT-Movie/" target="_blank" rel="noopener">项目主页</a>），同步开源全局规划器、5B 渲染权重、<a href="https://huggingface.co/datasets/JinPLU/CaT-Movie-Data" target="_blank" rel="noopener">CaT-Movie-Data</a> 与 <a href="https://huggingface.co/datasets/JinPLU/CaT-MBench" target="_blank" rel="noopener">CaT-MBench</a>。</span></li>
+            <li><time>2026.11</time><span>完成一步 <strong>Cosmos3-Edge</strong> 具身世界动作模型受控机制诊断研究，系统区分未来视频预测通路的动作承重与场景换摆下的反应式控制瓶颈。</span></li>
+            <li><time>2026.08</time><span>合作论文 <strong><a href="https://arxiv.org/abs/2605.30117" target="_blank" rel="noopener">VLA-Trace</a></strong> 获 EMNLP 2026 录用。</span></li>
+            <li><time>2026.06</time><span>以第一作者发布世界状态评测论文 <strong><a href="https://arxiv.org/abs/2606.20545" target="_blank" rel="noopener">Current World Models Lack a Persistent State Core</a></strong>（<a href="https://jinplu.github.io/WRBench/" target="_blank" rel="noopener">WRBench</a>）。</span></li>
+            <li><time>2026.05</time><span>合作发布 <strong><a href="https://arxiv.org/abs/2605.30117" target="_blank" rel="noopener">VLA-Trace</a></strong> 与 <strong><a href="https://arxiv.org/abs/2605.15153" target="_blank" rel="noopener">Pelican-Unify 1.0</a></strong>，分别聚焦 VLA 表征追踪与统一视频-动作生成。</span></li>
+            <li><time>2026.01</time><span>第一作者论文 <strong><a href="https://arxiv.org/abs/2509.22307" target="_blank" rel="noopener">VeloxSeg</a></strong> 获 ICLR 2026 录用。</span></li>
+            <li><time>2024.03</time><span>第一作者论文 <strong><a href="https://doi.org/10.1007/978-3-031-72111-3_30" target="_blank" rel="noopener">H2ASeg</a></strong> 获 MICCAI 2024 提前录用（前 11%）。</span></li>
+          </ul>
+        </section>
+
+        <section id="experience" class="section reveal-item">
+          <div class="section-heading">
+            <h2>💼 实习经历</h2>
+          </div>
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-date">2025.11 - 2026.11</div>
+              <div>
+                <h3>北京人形机器人创新中心（X-Humanoid）</h3>
+                <p>大模型算法实习生，具身智能世界模型算法团队 · 北京</p>
+                <ul class="experience-details">
+                  <li><strong>相机可控视频生成与 WRBench：</strong>在 Wan2.2-TI2V-5B 上独立负责相机轨迹条件建模（ViPE 多源位姿管线、逐像素 Plücker 射线与逐层相对位姿注入），诊断运镜文本捷径与机械臂动态退化问题；以第一作者提出反事实状态评测基准 <a href="https://jinplu.github.io/WRBench/" target="_blank" rel="noopener">WRBench</a>（23 个模型、9,600 段视频）。</li>
+                  <li><strong>一步具身世界动作模型研究：</strong>将 <strong>Cosmos3-Edge</strong> 适配为一步联合动作策略（闭环中值延迟由 697 ms 降至 141 ms），并通过逐位等价按需渲染将仿真闭环评测提速 2.7–4.3 倍。结合同预算消融、空间占据探针（AUC 0.972 对比 93.6% 仍指向旧位置的首执行动作块）、5,000 局真值目标条件评测与因果路由实验，揭示未来视频通路虽支撑动作输出，却不足以在场景变化下触发反应式控制。</li>
+                  <li><strong>合作研究：</strong>参与 <a href="https://arxiv.org/abs/2605.30117" target="_blank" rel="noopener">VLA-Trace</a>（EMNLP 2026）核心方案设计与完善，并承担 <a href="https://arxiv.org/abs/2605.15153" target="_blank" rel="noopener">Pelican-Unify 1.0</a> 多源数据处理工作。</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="publications" class="section reveal-item">
+          <div class="section-heading">
+            <h2>📘 代表论文</h2>
+            <div class="publications-toolbar">
+              <p class="citation-overview">
+                完整列表：<a href="https://scholar.google.com/citations?user=wnc_GPkAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+                <a class="metric-link" href="https://scholar.google.com/citations?user=wnc_GPkAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+                  <img src="https://img.shields.io/badge/citations-193-blue?logo=google-scholar&amp;logoColor=white&amp;style=flat-square" alt="Google Scholar citations: 193">
+                </a>
+                <span class="citation-stats">h-index 6 · i10-index 5</span>
+              </p>
+              <div class="pub-filter-tabs" role="toolbar" aria-label="论文筛选">
+                <button class="pub-filter-tab is-active" type="button" data-pub-filter="all">全部</button>
+                <button class="pub-filter-tab" type="button" data-pub-filter="first">第一作者</button>
+                <button class="pub-filter-tab" type="button" data-pub-filter="video">视频与世界模型</button>
+                <button class="pub-filter-tab" type="button" data-pub-filter="embodied">具身智能</button>
+                <button class="pub-filter-tab" type="button" data-pub-filter="medical">医学与三维</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="publication-fields">
+            <div class="publication-field" data-topic-group="video">
+              <div class="publication-field-header">
+                <h3 class="publication-field-heading">🌍 可控视频生成与世界模型</h3>
+                <div class="publication-rail-controls" aria-label="视频生成论文切换">
+                  <span class="publication-rail-counter" data-publication-counter aria-live="polite">1 / 2</span>
+                  <button class="publication-rail-button" type="button" data-publication-control="previous" aria-label="上一篇视频生成论文">
+                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                  </button>
+                  <button class="publication-rail-button" type="button" data-publication-control="next" aria-label="下一篇视频生成论文">
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="publication-list publication-rail" data-publication-rail tabindex="0" aria-label="视频生成与世界模型论文列表">
+                <article class="publication" data-topic="video" data-role="first">
+                  <a class="pub-figure" href="assets/papers/cat-movie-overview.png" data-lightbox-img="assets/papers/cat-movie-overview.png" data-lightbox-title="CaT-Movie 框架总览" target="_blank" rel="noopener" aria-label="查看 CaT-Movie 框架总览图">
+                    <span class="badge badge-primary">arXiv 2026</span>
+                    <img src="assets/papers/cat-movie-overview.png" alt="CaT-Movie 框架总览图：全局故事板规划器、锚点召回与局部窗口渲染器">
+                  </a>
+                  <div class="pub-body">
+                    <div class="pub-meta">
+                      <span class="badge badge-role">第一作者</span>
+                      <span class="badge badge-period">2026.11</span>
+                    </div>
+                    <h3><a href="https://arxiv.org/abs/2611.25620" target="_blank" rel="noopener">CaT-Movie: Balancing Global Planning and Local Rendering for Long Multi-Shot Video Generation</a></h3>
+                    <p class="authors"><strong>J. Lu*</strong>, H. Shi*, Y. Guan, J. Xia, B. Wu, Y. Chen, Z. Xiong†.</p>
+                    <div class="pub-metrics" aria-label="论文指标">
+                      <a class="metric-link" href="https://huggingface.co/papers/2611.25620" target="_blank" rel="noopener">
+                        <img src="https://img.shields.io/badge/dynamic/json?style=flat-square&amp;label=HF%20votes&amp;query=upvotes&amp;url=https%3A%2F%2Fhuggingface.co%2Fapi%2Fpapers%2F2611.25620&amp;color=405e8e" alt="Hugging Face votes">
+                      </a>
+                      <a class="metric-link" href="https://github.com/JinPLu/CaT-Movie" target="_blank" rel="noopener">
+                        <img src="https://img.shields.io/github/stars/JinPLu/CaT-Movie?style=flat-square&amp;label=Stars&amp;color=405e8e" alt="GitHub stars">
+                      </a>
+                    </div>
+                    <ul class="pub-summary" aria-label="论文摘要">
+                      <li><strong>问题：</strong>逐镜生成易遗忘实体，联合窗口易发生跨窗状态漂移，而相似帧记忆会诱发画面构图复制。</li>
+                      <li><strong>方法：</strong>将长视频解耦为免训练全局故事板规划器（Qwen3.8-27B 结合确定性状态编译器）与 5B 局部窗口渲染器，并设计分镜交叉注意力、负 RoPE 实体路由稀疏注意力与故事板索引锚点召回。</li>
+                      <li><strong>结果：</strong>开源 35.8 万镜头数据集 <em>CaT-Movie-Data</em> 与切镜门控基准 <em>CaT-MBench</em>，以 5B 渲染器取得 <strong>0.597</strong> 最优综合分，超越 14B 基线 HoloCine（0.571）与 StoryMem（0.527）。</li>
+                    </ul>
+                    <div class="pub-links">
+                      <a href="https://arxiv.org/abs/2611.25620" target="_blank" rel="noopener">论文</a>
+                      <a href="https://jinplu.github.io/CaT-Movie/" target="_blank" rel="noopener">项目主页</a>
+                      <a href="https://github.com/JinPLu/CaT-Movie" target="_blank" rel="noopener">代码</a>
+                      <a href="https://huggingface.co/JinPLU/CaT-Movie" target="_blank" rel="noopener">权重</a>
+                      <a href="https://huggingface.co/datasets/JinPLU/CaT-Movie-Data" target="_blank" rel="noopener">数据集</a>
+                      <a href="https://huggingface.co/datasets/JinPLU/CaT-MBench" target="_blank" rel="noopener">评测基准</a>
+                      <a href="assets/papers/cat-movie-overview.png" target="_blank" rel="noopener">原图</a>
+                      <button class="bibtex-toggle" type="button" data-bibtex-toggle="bib-catmovie" aria-expanded="false">BibTeX</button>
+                    </div>
+                    <div class="bibtex-drawer" id="bib-catmovie" hidden>
+                      <div class="bibtex-drawer-head">
+                        <span>BibTeX</span>
+                        <button class="bibtex-copy-btn" type="button" data-bibtex-copy="bib-catmovie">复制</button>
+                      </div>
+                      <pre>@article{lu2026catmovie,
+  title={CaT-Movie: Balancing Global Planning and Local Rendering for Long Multi-Shot Video Generation},
+  author={Lu, Jinpeng and Shi, Haoyuan and Guan, Yuanshen and Xia, Jiyuan and Wu, Bin and Chen, Yinda and Xiong, Zhiwei},
+  journal={arXiv preprint arXiv:2611.25620},
+  year={2026}
+}</pre>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="publication" data-topic="video" data-role="first">
+                  <a class="pub-figure" href="assets/papers/wrbench-teaser.pdf" data-lightbox-img="assets/papers/previews/wrbench-teaser.png" data-lightbox-title="WRBench：视角变化下的世界状态持久性评测" target="_blank" rel="noopener" aria-label="查看 WRBench 原图">
+                    <span class="badge badge-primary">arXiv 2026</span>
+                    <img src="assets/papers/previews/wrbench-teaser.png" alt="WRBench 原图：视角变化与状态一致性评测" loading="lazy">
+                  </a>
+                  <div class="pub-body">
+                    <div class="pub-meta">
+                      <span class="badge badge-role">第一作者</span>
+                      <span class="badge badge-period">2026.06</span>
+                    </div>
+                    <h3><a href="https://arxiv.org/abs/2606.20545" target="_blank" rel="noopener">Current World Models Lack a Persistent State Core</a></h3>
+                    <p class="authors"><strong>J. Lu</strong>, D. Zhu, H. Shi, L. Cai, G. Tang, Y. Chen, J. Cao, D. Tang, Y. Zhang, Y. Dai, X. Ju†.</p>
+                    <div class="pub-metrics" aria-label="论文指标">
+                      <a class="metric-link" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=wnc_GPkAAAAJ&amp;pagesize=100&amp;citation_for_view=wnc_GPkAAAAJ:YsMSGLbcyi4C" target="_blank" rel="noopener">
+                        <img src="https://img.shields.io/badge/citations-14-blue?logo=google-scholar&amp;logoColor=white&amp;style=flat-square" alt="Google Scholar citations: 14">
+                      </a>
+                      <a class="metric-link" href="https://huggingface.co/papers/2606.20545" target="_blank" rel="noopener">
+                        <img src="https://img.shields.io/badge/dynamic/json?style=flat-square&amp;label=HF%20votes&amp;query=upvotes&amp;url=https%3A%2F%2Fhuggingface.co%2Fapi%2Fpapers%2F2606.20545&amp;color=405e8e" alt="Hugging Face votes">
+                      </a>
+                      <a class="metric-link" href="https://github.com/JinPLu/WRBench" target="_blank" rel="noopener">
+                        <img src="https://img.shields.io/github/stars/JinPLu/WRBench?style=flat-square&amp;label=Stars&amp;color=405e8e" alt="GitHub stars">
+                      </a>
+                    </div>
+                    <ul class="pub-summary" aria-label="论文摘要">
+                      <li><strong>问题：</strong>当相机运动仅改变观察视角时，视频渲染是否真正与底层世界状态演化解耦？</li>
+                      <li><strong>方法：</strong>WRBench 统一适配位姿、动作、几何渲染与文本四类原生相机接口，系统拆分相机执行、视觉完整性、可见演化、重现支持与条件终点一致性。</li>
+                      <li><strong>发现：</strong>覆盖 23 个模型、9,600 段视频的评测表明，视角移开再返回会显著干扰事件演化，画面质量与重现率提升并不保证终点状态正确。</li>
+                    </ul>
+                    <div class="pub-links">
+                      <a href="https://arxiv.org/abs/2606.20545" target="_blank" rel="noopener">论文</a>
+                      <a href="https://jinplu.github.io/WRBench/" target="_blank" rel="noopener">项目主页</a>
+                      <a href="https://github.com/JinPLu/WRBench" target="_blank" rel="noopener">代码</a>
+                      <a href="https://huggingface.co/collections/WRBench/wrbench-current-world-models-lack-a-persistent-state-core-6a365c717251293c9fc2cc26" target="_blank" rel="noopener">评测资源</a>
+                      <a href="https://huggingface.co/spaces/WRBench/wrbench-leaderboard" target="_blank" rel="noopener">榜单</a>
+                      <a href="assets/papers/wrbench-teaser.pdf" target="_blank" rel="noopener">原图</a>
+                      <button class="bibtex-toggle" type="button" data-bibtex-toggle="bib-wrbench" aria-expanded="false">BibTeX</button>
+                    </div>
+                    <div class="bibtex-drawer" id="bib-wrbench" hidden>
+                      <div class="bibtex-drawer-head">
+                        <span>BibTeX</span>
+                        <button class="bibtex-copy-btn" type="button" data-bibtex-copy="bib-wrbench">复制</button>
+                      </div>
+                      <pre>@article{lu2026wrbench,
+  title={Current World Models Lack a Persistent State Core},
+  author={Lu, Jinpeng and Zhu, Dexu and Shi, Haoyuan and Cai, Linghan and Tang, Guo and Chen, Yinda and Cao, Jie and Tang, Duyu and Zhang, Yi and Dai, Yong and Ju, Xiaozhu},
+  journal={arXiv preprint arXiv:2606.20545},
+  year={2026}
+}</pre>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="publication-field" data-topic-group="embodied">
+              <div class="publication-field-header">
+                <h3 class="publication-field-heading">🤖 具身智能与 VLA 分析</h3>
+                <div class="publication-rail-controls" aria-label="具身智能论文切换">
+                  <span class="publication-rail-counter" data-publication-counter aria-live="polite">1 / 2</span>
+                  <button class="publication-rail-button" type="button" data-publication-control="previous" aria-label="上一篇具身智能论文">
+                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                  </button>
+                  <button class="publication-rail-button" type="button" data-publication-control="next" aria-label="下一篇具身智能论文">
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="publication-list publication-rail" data-publication-rail tabindex="0" aria-label="具身智能论文列表">
+                <article class="publication" data-topic="embodied" data-role="collab">
+                  <a class="pub-figure" href="assets/papers/vlatrace-framework.pdf" data-lightbox-img="assets/papers/previews/vlatrace-framework.png" data-lightbox-title="VLA-Trace 诊断框架" target="_blank" rel="noopener" aria-label="查看 VLA-Trace 原图">
+                    <span class="badge badge-primary">EMNLP 2026</span>
+                    <img src="assets/papers/previews/vlatrace-framework.png" alt="VLA-Trace 原图：表征与行为追踪框架" loading="lazy">
+                  </a>
+                  <div class="pub-body">
+                    <div class="pub-meta">
+                      <span class="badge badge-role">合作作者</span>
+                      <span class="badge badge-ccf">CCF-B</span>
+                      <span class="badge badge-period">2026.08</span>
+                    </div>
+                    <h3><a href="https://arxiv.org/abs/2605.30117" target="_blank" rel="noopener">VLA-Trace: Diagnosing Vision-Language-Action Models through Representation and Behavior Tracing</a></h3>
+                    <div class="pub-metrics" aria-label="论文指标">
+                      <a class="metric-link" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=wnc_GPkAAAAJ&amp;pagesize=100&amp;citation_for_view=wnc_GPkAAAAJ:W7OEmFMy1HYC" target="_blank" rel="noopener">
+                        <img src="https://img.shields.io/badge/citations-12-blue?logo=google-scholar&amp;logoColor=white&amp;style=flat-square" alt="Google Scholar citations: 12">
+                      </a>
+                      <a class="metric-link" href="https://huggingface.co/papers/2605.30117" target="_blank" rel="noopener">
+                        <img src="https://img.shields.io/badge/dynamic/json?style=flat-square&amp;label=HF%20votes&amp;query=upvotes&amp;url=https%3A%2F%2Fhuggingface.co%2Fapi%2Fpapers%2F2605.30117&amp;color=405e8e" alt="Hugging Face votes">
+                      </a>
+                    </div>
+                    <ul class="pub-summary" aria-label="论文摘要">
+                      <li><strong>问题：</strong>VLA 模型内部表征如何转化为最终决策与闭环执行行为？</li>
+                      <li><strong>方法：</strong>在 π<sub>0.5</sub> 与 OpenVLA 上结合表征分析、因果注意力干预与行为探针进行全链路诊断。</li>
+                      <li><strong>发现：</strong>揭示了不同 VLA 架构的适配模式与动作路由规律，并定位细粒度语义指令遵循的局限。</li>
+                    </ul>
+                    <div class="pub-links">
+                      <a href="https://arxiv.org/abs/2605.30117" target="_blank" rel="noopener">论文</a>
+                      <a href="assets/papers/vlatrace-framework.pdf" target="_blank" rel="noopener">原图</a>
+                      <button class="bibtex-toggle" type="button" data-bibtex-toggle="bib-vlatrace" aria-expanded="false">BibTeX</button>
+                    </div>
+                    <div class="bibtex-drawer" id="bib-vlatrace" hidden>
+                      <div class="bibtex-drawer-head">
+                        <span>BibTeX</span>
+                        <button class="bibtex-copy-btn" type="button" data-bibtex-copy="bib-vlatrace">复制</button>
+                      </div>
+                      <pre>@inproceedings{shi2026vlatrace,
+  title={VLA-Trace: Diagnosing Vision-Language-Action Models through Representation and Behavior Tracing},
+  author={Shi, Haoyuan and others},
+  booktitle={EMNLP},
+  year={2026}
+}</pre>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="publication" data-topic="embodied" data-role="collab">
+                  <a class="pub-figure" href="assets/papers/pelican-unified-ac.pdf" data-lightbox-img="assets/papers/previews/pelican-unified-ac.png" data-lightbox-title="Pelican-Unify 1.0 架构图" target="_blank" rel="noopener" aria-label="查看 Pelican-Unify 原图">
+                    <span class="badge badge-primary">arXiv 2026</span>
+                    <img src="assets/papers/previews/pelican-unified-ac.png" alt="Pelican-Unify 原图：统一具身智能模型组件" loading="lazy">
+                  </a>
+                  <div class="pub-body">
+                    <div class="pub-meta">
+                      <span class="badge badge-role">合作作者</span>
+                      <span class="badge badge-period">2026.05</span>
+                    </div>
+                    <h3><a href="https://arxiv.org/abs/2605.15153" target="_blank" rel="noopener">Pelican-Unify 1.0: A Unified Embodied Intelligence Model</a></h3>
+                    <div class="pub-metrics" aria-label="论文指标">
+                      <a class="metric-link" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=wnc_GPkAAAAJ&amp;pagesize=100&amp;citation_for_view=wnc_GPkAAAAJ:eQOLeE2rZwMC" target="_blank" rel="noopener">
+                        <img src="https://img.shields.io/badge/citations-9-blue?logo=google-scholar&amp;logoColor=white&amp;style=flat-square" alt="Google Scholar citations: 9">
+                      </a>
+                      <a class="metric-link" href="https://huggingface.co/papers/2605.15153" target="_blank" rel="noopener">
+                        <img src="https://img.shields.io/badge/dynamic/json?style=flat-square&amp;label=HF%20votes&amp;query=upvotes&amp;url=https%3A%2F%2Fhuggingface.co%2Fapi%2Fpapers%2F2605.15153&amp;color=405e8e" alt="Hugging Face votes">
+                      </a>
+                    </div>
+                    <ul class="pub-summary" aria-label="论文摘要">
+                      <li><strong>问题：</strong>单一具身基座模型能否打通视觉理解、推理、未来想象与动作生成？</li>
+                      <li><strong>方法：</strong>基于共享视觉语言模型底座，进一步实现未来视频与动作的联合生成。</li>
+                      <li><strong>训练：</strong>联合优化语言、视频预测与动作控制目标，而非割裂训练专用子模型。</li>
+                    </ul>
+                    <div class="pub-links">
+                      <a href="https://arxiv.org/abs/2605.15153" target="_blank" rel="noopener">论文</a>
+                      <a href="assets/papers/pelican-unified-ac.pdf" target="_blank" rel="noopener">原图</a>
+                      <button class="bibtex-toggle" type="button" data-bibtex-toggle="bib-pelican" aria-expanded="false">BibTeX</button>
+                    </div>
+                    <div class="bibtex-drawer" id="bib-pelican" hidden>
+                      <div class="bibtex-drawer-head">
+                        <span>BibTeX</span>
+                        <button class="bibtex-copy-btn" type="button" data-bibtex-copy="bib-pelican">复制</button>
+                      </div>
+                      <pre>@article{zhang2026pelican,
+  title={Pelican-Unify 1.0: A Unified Embodied Intelligence Model for Understanding, Reasoning, Imagination and Action},
+  author={Zhang, Yi and others},
+  journal={arXiv preprint arXiv:2605.15153},
+  year={2026}
+}</pre>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="publication-field" data-topic-group="medical">
+              <div class="publication-field-header">
+                <h3 class="publication-field-heading">🏥 医学视觉与高效三维感知</h3>
+                <div class="publication-rail-controls" aria-label="医学与三维视觉论文切换">
+                  <span class="publication-rail-counter" data-publication-counter aria-live="polite">1 / 3</span>
+                  <button class="publication-rail-button" type="button" data-publication-control="previous" aria-label="上一篇医学与三维论文">
+                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                  </button>
+                  <button class="publication-rail-button" type="button" data-publication-control="next" aria-label="下一篇医学与三维论文">
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="publication-list publication-rail" data-publication-rail tabindex="0" aria-label="医学视觉与三维感知论文列表">
+                <article class="publication" data-topic="medical" data-role="first">
+                  <a class="pub-figure" href="assets/papers/veloxseg-overview.pdf" data-lightbox-img="assets/papers/previews/veloxseg-overview.png" data-lightbox-title="VeloxSeg 架构总览（ICLR 2026）" target="_blank" rel="noopener" aria-label="查看 VeloxSeg 原图">
+                    <span class="badge badge-primary">ICLR 2026</span>
+                    <img src="assets/papers/previews/veloxseg-overview.png" alt="VeloxSeg 架构总览原图" loading="lazy">
+                  </a>
+                  <div class="pub-body">
+                    <div class="pub-meta">
+                      <span class="badge badge-role">第一作者</span>
+                      <span class="badge badge-ccf">CCF-A</span>
+                      <span class="badge badge-period">2026.01</span>
+                    </div>
+                    <h3><a href="https://arxiv.org/abs/2509.22307" target="_blank" rel="noopener">Johnson-Lindenstrauss Lemma Guided Network for Efficient 3D Medical Segmentation</a></h3>
+                    <p class="authors"><strong>J. Lu</strong>, L. Cai, Y. Chen, G. Tang, S. Jiang, H. Shi, Z. Xiong†.</p>
+                    <div class="pub-metrics" aria-label="论文指标">
+                      <a class="metric-link" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=wnc_GPkAAAAJ&amp;pagesize=100&amp;citation_for_view=wnc_GPkAAAAJ:WF5omc3nYNoC" target="_blank" rel="noopener">
+                        <img src="https://img.shields.io/badge/citations-2-blue?logo=google-scholar&amp;logoColor=white&amp;style=flat-square" alt="Google Scholar citations: 2">
+                      </a>
+                      <a class="metric-link" href="https://github.com/JinPLu/VeloxSeg" target="_blank" rel="noopener">
+                        <img src="https://img.shields.io/github/stars/JinPLu/VeloxSeg?style=flat-square&amp;label=Stars&amp;color=405e8e" alt="GitHub stars">
+                      </a>
+                    </div>
+                    <ul class="pub-summary" aria-label="论文摘要">
+                      <li><strong>问题：</strong>如何在有限计算与参数预算下保持三维多模态表征质量与病灶细节？</li>
+                      <li><strong>方法：</strong>以 JL 引理指导分组卷积并结合多尺度跨模态注意力，通过通道 Gram 矩阵无对齐迁移自监督重建纹理先验，避免跨任务空间对齐冲突。</li>
+                      <li><strong>结果：</strong>在保持 1.66M 参数量与零额外推理开销下，蒸馏使 AutoPET-II Dice 提升 2.80 个百分点。</li>
+                    </ul>
+                    <div class="pub-links">
+                      <a href="https://arxiv.org/abs/2509.22307" target="_blank" rel="noopener">论文</a>
+                      <a href="https://github.com/JinPLu/VeloxSeg" target="_blank" rel="noopener">代码</a>
+                      <a href="assets/papers/veloxseg-overview.pdf" target="_blank" rel="noopener">原图</a>
+                      <button class="bibtex-toggle" type="button" data-bibtex-toggle="bib-veloxseg" aria-expanded="false">BibTeX</button>
+                    </div>
+                    <div class="bibtex-drawer" id="bib-veloxseg" hidden>
+                      <div class="bibtex-drawer-head">
+                        <span>BibTeX</span>
+                        <button class="bibtex-copy-btn" type="button" data-bibtex-copy="bib-veloxseg">复制</button>
+                      </div>
+                      <pre>@inproceedings{lu2026veloxseg,
+  title={Johnson-Lindenstrauss Lemma Guided Network for Efficient 3D Medical Segmentation},
+  author={Lu, Jinpeng and Cai, Linghan and Chen, Yinda and Tang, Guo and Jiang, Songhan and Shi, Haoyuan and Xiong, Zhiwei},
+  booktitle={ICLR},
+  year={2026}
+}</pre>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="publication" data-topic="medical" data-role="first">
+                  <a class="pub-figure" href="assets/papers/dinov3-petct-feature.pdf" data-lightbox-img="assets/papers/previews/dinov3-petct-feature.png" data-lightbox-title="DINOv3 医学视觉特征分析" target="_blank" rel="noopener" aria-label="查看 DINOv3 医学视觉特征原图">
+                    <span class="badge badge-primary">arXiv 2025</span>
+                    <img src="assets/papers/previews/dinov3-petct-feature.png" alt="DINOv3 PET/CT 特征原图" loading="lazy">
+                  </a>
+                  <div class="pub-body">
+                    <div class="pub-meta">
+                      <span class="badge badge-role">共同一作</span>
+                      <span class="badge badge-period">2025.09</span>
+                    </div>
+                    <h3><a href="https://arxiv.org/abs/2509.06467" target="_blank" rel="noopener">Does DINOv3 Set a New Medical Vision Standard?</a></h3>
+                    <p class="authors">C. Liu*, Y. Chen*, H. Shi*, <strong>J. Lu*</strong>, B. Jian*, J. Pan*, L. Cai*, et al.</p>
+                    <div class="pub-metrics" aria-label="论文指标">
+                      <a class="metric-link" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=wnc_GPkAAAAJ&amp;pagesize=100&amp;citation_for_view=wnc_GPkAAAAJ:2osOgNQ5qMEC" target="_blank" rel="noopener">
+                        <img src="https://img.shields.io/badge/citations-61-blue?logo=google-scholar&amp;logoColor=white&amp;style=flat-square" alt="Google Scholar citations: 61">
+                      </a>
+                      <a class="metric-link" href="https://huggingface.co/papers/2509.06467" target="_blank" rel="noopener">
+                        <img src="https://img.shields.io/badge/dynamic/json?style=flat-square&amp;label=HF%20votes&amp;query=upvotes&amp;url=https%3A%2F%2Fhuggingface.co%2Fapi%2Fpapers%2F2509.06467&amp;color=405e8e" alt="Hugging Face votes">
+                      </a>
+                    </div>
+                    <ul class="pub-summary" aria-label="论文摘要">
+                      <li><strong>问题：</strong>自然图像自监督预训练能否为医学影像任务提供通用的视觉基础表征？</li>
+                      <li><strong>方法：</strong>将冻结的 DINOv3 特征系统适配至二维/三维医学分类与三维分割任务，横向对比模型规模与输入分辨率。</li>
+                      <li><strong>结果：</strong>在部分任务上超越专用医学模型，但规模缩放收益存在分化，在病理、电镜与 PET 模态上仍存在迁移局限。</li>
+                    </ul>
+                    <div class="pub-links">
+                      <a href="https://arxiv.org/abs/2509.06467" target="_blank" rel="noopener">论文</a>
+                      <a href="https://huggingface.co/papers/2509.06467" target="_blank" rel="noopener">HF 论文页</a>
+                      <a href="assets/papers/dinov3-petct-feature.pdf" target="_blank" rel="noopener">原图</a>
+                      <button class="bibtex-toggle" type="button" data-bibtex-toggle="bib-dinov3" aria-expanded="false">BibTeX</button>
+                    </div>
+                    <div class="bibtex-drawer" id="bib-dinov3" hidden>
+                      <div class="bibtex-drawer-head">
+                        <span>BibTeX</span>
+                        <button class="bibtex-copy-btn" type="button" data-bibtex-copy="bib-dinov3">复制</button>
+                      </div>
+                      <pre>@article{liu2025dinov3med,
+  title={Does DINOv3 Set a New Medical Vision Standard?},
+  author={Liu, Che and Chen, Yinda and Shi, Haoyuan and Lu, Jinpeng and others},
+  journal={arXiv preprint arXiv:2509.06467},
+  year={2025}
+}</pre>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="publication" data-topic="medical" data-role="first">
+                  <a class="pub-figure" href="assets/papers/h2aseg-overview.png" data-lightbox-img="assets/papers/h2aseg-overview.png" data-lightbox-title="H2ASeg 架构总览（MICCAI 2024）" target="_blank" rel="noopener" aria-label="查看 H2ASeg 原图">
+                    <span class="badge badge-primary">MICCAI 2024</span>
+                    <img src="assets/papers/h2aseg-overview.png" alt="H2ASeg 原图：PET/CT 分层自适应交互架构" loading="lazy">
+                  </a>
+                  <div class="pub-body">
+                    <div class="pub-meta">
+                      <span class="badge badge-role">第一作者</span>
+                      <a class="badge badge-ccf" href="https://conferences.miccai.org/2024/en/Update-on-MICCAI-2024-Paper-Reviews.html" target="_blank" rel="noopener" title="约前 11% 审稿论文获提前录用">CCF-B，前 11%</a>
+                      <span class="badge badge-period">2024.03</span>
+                    </div>
+                    <h3><a href="https://doi.org/10.1007/978-3-031-72111-3_30" target="_blank" rel="noopener">H2ASeg: Hierarchical Adaptive Interaction and Weighting Network for Tumor Segmentation in PET/CT Images</a></h3>
+                    <p class="authors"><strong>J. Lu</strong>, J. Chen, L. Cai, S. Jiang, Y. Zhang†.</p>
+                    <div class="pub-metrics" aria-label="论文指标">
+                      <a class="metric-link" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=wnc_GPkAAAAJ&amp;pagesize=100&amp;citation_for_view=wnc_GPkAAAAJ:u5HHmVD_uO8C" target="_blank" rel="noopener">
+                        <img src="https://img.shields.io/badge/citations-19-blue?logo=google-scholar&amp;logoColor=white&amp;style=flat-square" alt="Google Scholar citations: 19">
+                      </a>
+                      <a class="metric-link" href="https://github.com/JinPLu/H2ASeg" target="_blank" rel="noopener">
+                        <img src="https://img.shields.io/github/stars/JinPLu/H2ASeg?style=flat-square&amp;label=Stars&amp;color=405e8e" alt="GitHub stars">
+                      </a>
+                    </div>
+                    <ul class="pub-summary" aria-label="论文摘要">
+                      <li><strong>问题：</strong>独立 PET 与 CT 编码器之间信息交互受限，难以充分融合代谢语义与解剖结构线索。</li>
+                      <li><strong>方法：</strong>通过局部与全局双向注意力实现跨模态分层交互，并按目标相关性自适应加权选择模态特征。</li>
+                      <li><strong>结果：</strong>在 AutoPET-II 与 Hecktor2022 上优于对比方法，消融与权重可视化验证了分层交互与自适应选择的有效性。</li>
+                    </ul>
+                    <div class="pub-links">
+                      <a href="https://doi.org/10.1007/978-3-031-72111-3_30" target="_blank" rel="noopener">论文</a>
+                      <a href="https://github.com/JinPLu/H2ASeg" target="_blank" rel="noopener">代码</a>
+                      <a href="assets/papers/h2aseg-overview.png" target="_blank" rel="noopener">原图</a>
+                      <button class="bibtex-toggle" type="button" data-bibtex-toggle="bib-h2aseg" aria-expanded="false">BibTeX</button>
+                    </div>
+                    <div class="bibtex-drawer" id="bib-h2aseg" hidden>
+                      <div class="bibtex-drawer-head">
+                        <span>BibTeX</span>
+                        <button class="bibtex-copy-btn" type="button" data-bibtex-copy="bib-h2aseg">复制</button>
+                      </div>
+                      <pre>@inproceedings{lu2024h2aseg,
+  title={H2ASeg: Hierarchical Adaptive Interaction and Weighting Network for Tumor Segmentation in PET/CT Images},
+  author={Lu, Jinpeng and Chen, Jingyun and Cai, Linghan and Jiang, Songhan and Zhang, Yongbing},
+  booktitle={MICCAI},
+  year={2024}
+}</pre>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="additional-publications" data-additional-medical>
+                <h3>其他医学视觉合作论文</h3>
+                <ul>
+                  <li>
+                    <a href="https://doi.org/10.1016/j.media.2025.103631" target="_blank" rel="noopener">AttriMIL: Revisiting Attention-based Multiple Instance Learning for Whole-slide Pathological Image Classification</a>
+                    <span class="additional-authors">L. Cai, S. Huang, Y. Zhang, <strong>J. Lu</strong>, Y. Zhang. · 第四作者</span>
+                    <div class="pub-metrics" aria-label="论文指标">
+                      <a class="metric-link" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=wnc_GPkAAAAJ&amp;pagesize=100&amp;citation_for_view=wnc_GPkAAAAJ:d1gkVwhDpl0C" target="_blank" rel="noopener">
+                        <img src="https://img.shields.io/badge/citations-68-blue?logo=google-scholar&amp;logoColor=white&amp;style=flat-square" alt="Google Scholar citations: 68">
+                      </a>
+                      <a class="metric-link" href="https://github.com/MedCAI/AttriMIL" target="_blank" rel="noopener">
+                        <img src="https://img.shields.io/github/stars/MedCAI/AttriMIL?style=flat-square&amp;label=Stars&amp;color=405e8e" alt="GitHub stars">
+                      </a>
+                    </div>
+                    <span>Medical Image Analysis 2025 · 合作作者。参与面向全切片病理图像分类的注意力多示例学习研究。</span>
+                  </li>
+                  <li>
+                    <a href="https://arxiv.org/abs/2508.12381" target="_blank" rel="noopener">IPGPhormer: Interpretable Pathology Graph-Transformer for Survival Analysis</a>
+                    <span class="additional-authors">G. Tang, S. Jiang, <strong>J. Lu</strong>, L. Cai, Y. Zhang. · 第三作者</span>
+                    <div class="pub-metrics" aria-label="论文指标">
+                      <a class="metric-link" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=wnc_GPkAAAAJ&amp;pagesize=100&amp;citation_for_view=wnc_GPkAAAAJ:qjMakFHDy7sC" target="_blank" rel="noopener">
+                        <img src="https://img.shields.io/badge/citations-2-blue?logo=google-scholar&amp;logoColor=white&amp;style=flat-square" alt="Google Scholar citations: 2">
+                      </a>
+                      <a class="metric-link" href="https://github.com/35tang/IPGPhormer" target="_blank" rel="noopener">
+                        <img src="https://img.shields.io/github/stars/35tang/IPGPhormer?style=flat-square&amp;label=Stars&amp;color=405e8e" alt="GitHub stars">
+                      </a>
+                    </div>
+                    <span>arXiv 2025 · 合作作者。参与基于可解释图 Transformer 的病理生存分析建模。</span>
+                  </li>
+                  <li>
+                    <a href="https://arxiv.org/abs/2309.05446" target="_blank" rel="noopener">A Localization-to-Segmentation Framework for Automatic Tumor Segmentation in Whole-Body PET/CT Images</a>
+                    <span class="additional-authors">L. Cai, J. Huang, Z. Zhu, <strong>J. Lu</strong>, Y. Zhang. · 第四作者</span>
+                    <div class="pub-metrics" aria-label="论文指标">
+                      <a class="metric-link" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=wnc_GPkAAAAJ&amp;pagesize=100&amp;citation_for_view=wnc_GPkAAAAJ:UeHWp8X0CEIC" target="_blank" rel="noopener">
+                        <img src="https://img.shields.io/badge/citations-6-blue?logo=google-scholar&amp;logoColor=white&amp;style=flat-square" alt="Google Scholar citations: 6">
+                      </a>
+                    </div>
+                    <span>arXiv 2023 · 合作作者。参与全身 PET/CT 肿瘤自动分割的定位到分割级联框架研究。</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <p class="full-list-link">
+            → <a href="https://scholar.google.com/citations?user=wnc_GPkAAAAJ&amp;hl=en" target="_blank" rel="noopener">查看 Google Scholar 完整论文列表</a>
+          </p>
+        </section>
+
+        <section id="tools" class="section open-source-section reveal-item" aria-labelledby="tools-heading">
+          <div class="section-heading">
+            <h2 id="tools-heading">🧰 开源工具与项目</h2>
+            <p>围绕智能体协作与科研工程工作流开发的实用工具。</p>
+          </div>
+
+          <div class="open-source-rail-toolbar">
+            <p id="tools-rail-hint">每页展示 3 个项目。</p>
+            <div class="project-rail-controls" aria-label="开源项目翻页控制">
+              <span class="project-rail-counter" data-project-rail-counter aria-live="polite">1 / 2</span>
+              <button class="project-rail-button" type="button" data-project-rail-control="previous" aria-controls="open-source-rail" aria-label="上一页开源项目">
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+              </button>
+              <button class="project-rail-button" type="button" data-project-rail-control="next" aria-controls="open-source-rail" aria-label="下一页开源项目">
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+
+          <div id="open-source-rail" class="open-source-grid" data-project-rail role="region" aria-label="精选开源项目" aria-describedby="tools-rail-hint" tabindex="0">
+            <article class="open-source-card">
+              <p class="project-kicker"><span class="project-index">01</span> GPU 调度协作</p>
+              <h3>ServerPilot</h3>
+              <p>基于 MCP 的多机 GPU 租约协调工具，让智能体与研究人员在人工可控前提下安全申请、续约与释放共享显卡资源。</p>
+              <p class="project-link">
+                <a href="https://github.com/JinPLu/ServerPilot" target="_blank" rel="noopener">
+                  查看 ServerPilot <span aria-hidden="true">→</span><span class="sr-only">（在新标签页打开）</span>
+                </a>
+              </p>
+            </article>
+
+            <article class="open-source-card">
+              <p class="project-kicker"><span class="project-index">02</span> 智能体工作流</p>
+              <h3>Teamwork Simplify</h3>
+              <p>面向 Codex、Cursor 与 Claude Code 的轻量跨智能体规则与技能层，统一任务规划、并行执行与持久化上下文。</p>
+              <p class="project-link">
+                <a href="https://github.com/JinPLu/teamwork-simplify" target="_blank" rel="noopener">
+                  查看 Teamwork Simplify <span aria-hidden="true">→</span><span class="sr-only">（在新标签页打开）</span>
+                </a>
+              </p>
+            </article>
+
+            <article class="open-source-card">
+              <p class="project-kicker"><span class="project-index">03</span> 论文精读审计</p>
+              <h3>Clear-Eyed Reading Skills</h3>
+              <p>结构化论文阅读技能集，在解读结果前先系统核查实验声称边界、评测分母与基线设置。</p>
+              <p class="project-link">
+                <a href="https://github.com/JinPLu/clear-eyed-reading-skills" target="_blank" rel="noopener">
+                  查看项目 <span aria-hidden="true">→</span><span class="sr-only">（在新标签页打开）</span>
+                </a>
+              </p>
+            </article>
+
+            <article class="open-source-card">
+              <p class="project-kicker"><span class="project-index">04</span> 技术探讨协议</p>
+              <h3>DSH Discussion Mode</h3>
+              <p>目标锚定的多轮技术讨论模式，帮助复杂科研与工程探索始终聚焦于可证伪的下一步验证动作。</p>
+              <p class="project-link">
+                <a href="https://github.com/JinPLu/dsh-plugin-discussion-intent" target="_blank" rel="noopener">
+                  查看项目 <span aria-hidden="true">→</span><span class="sr-only">（在新标签页打开）</span>
+                </a>
+              </p>
+            </article>
+          </div>
+
+          <p class="full-list-link">
+            → <a href="https://github.com/JinPLu?tab=repositories" target="_blank" rel="noopener">前往 GitHub 查看更多项目 <span class="sr-only">（在新标签页打开）</span></a>
+          </p>
+        </section>
+
+        <section id="education" class="section reveal-item">
+          <div class="section-heading">
+            <h2>🎓 教育背景</h2>
+          </div>
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-date">2025.09 - 2028.06</div>
+              <div>
+                <h3>中国科学技术大学</h3>
+                <p>信息与通信工程硕士（预计 2028 年 6 月毕业）。</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-date">2021.09 - 2025.06</div>
+              <div>
+                <h3><a href="https://www.hitsz.edu.cn/" target="_blank" rel="noopener">哈尔滨工业大学（深圳）</a></h3>
+                <p>数据科学与大数据技术本科（数学类）；GPA 3.728 / 4，综合排名 17 / 172（前 10%）。</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="service" class="section">
+          <div class="section-heading">
+            <h2>📝 学术服务</h2>
+          </div>
+          <p>担任 ICLR 2027、NeurIPS 2027、IEEE TNNLS 审稿人。</p>
+        </section>
+
+        <section id="visitors" class="section visitor-section">
+          <div class="section-heading">
+            <h2>👣 访客统计</h2>
+            <p>访客大致地理分布与页面访问计数。</p>
+          </div>
+          <div class="visitor-panel">
+            <div class="visitor-location">
+              <h3>大致位置</h3>
+              <p id="visitor-location" aria-live="polite">大致位置：加载中...</p>
+              <p class="visitor-note">位置基于公开 IP 地理库估算，可能存在偏差；本页面不会显示您的原始 IP 地址。</p>
+            </div>
+            <a class="visitor-map" href="https://flagcounter.com/" target="_blank" rel="noopener" aria-label="打开 Flag Counter">
+              <img
+                src="https://s11.flagcounter.com/map/JinPLu/size_l/txt_333333/border_F2F2F2/pageviews_1/viewers_1/flags_1/"
+                alt="由 Flag Counter 提供的访客地图与计数器"
+                loading="lazy"
+              >
+            </a>
+          </div>
+        </section>
+
+        <footer class="site-footer">
+          <p>最后更新：2026 年 11 月。</p>
+        </footer>
+      </div>
+    </main>
+
+    <div class="figure-lightbox" id="figure-lightbox" hidden role="dialog" aria-modal="true" aria-label="论文配图大图预览">
+      <div class="figure-lightbox-card">
+        <button class="figure-lightbox-close" type="button" id="lightbox-close" aria-label="关闭大图预览">&times;</button>
+        <img id="lightbox-image" src="" alt="放大的论文配图">
+        <div class="figure-lightbox-bar">
+          <span id="lightbox-caption"></span>
+          <a id="lightbox-raw-link" href="#" target="_blank" rel="noopener">查看原始文件 ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Progressive scroll-reveal choreography
+      document.documentElement.classList.add('js-reveal');
+      const revealItems = Array.from(document.querySelectorAll('.reveal-item'));
+      if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                obs.unobserve(entry.target);
+              }
+            });
+          },
+          { rootMargin: '0px 0px -6% 0px', threshold: 0.04 }
+        );
+        revealItems.forEach((el) => revealObserver.observe(el));
+      } else {
+        revealItems.forEach((el) => el.classList.add('is-visible'));
+      }
+
+      // Header elevation, reading progress hairline, and scroll-spy nav highlight
+      const siteHeader = document.getElementById('site-header');
+      const scrollProgress = document.getElementById('scroll-progress');
+      const navAnchors = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+      const spyTargets = navAnchors.map((a) => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+      const updateScrollChrome = () => {
+        const y = window.scrollY;
+        if (siteHeader) siteHeader.classList.toggle('is-scrolled', y > 8);
+        if (scrollProgress) {
+          const max = document.documentElement.scrollHeight - window.innerHeight;
+          scrollProgress.style.width = max > 0 ? `${Math.min(100, (y / max) * 100)}%` : '0%';
+        }
+      };
+      window.addEventListener('scroll', updateScrollChrome, { passive: true });
+      updateScrollChrome();
+
+      if ('IntersectionObserver' in window && spyTargets.length) {
+        const spyObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const hash = `#${entry.target.id}`;
+                navAnchors.forEach((a) => a.classList.toggle('is-active', a.getAttribute('href') === hash));
+              }
+            });
+          },
+          { rootMargin: '-18% 0px -68% 0px' }
+        );
+        spyTargets.forEach((sec) => spyObserver.observe(sec));
+      }
+
+      // Preserve active section anchor when switching language
+      document.querySelectorAll('[data-lang-switch]').forEach((link) => {
+        link.addEventListener('click', () => {
+          if (window.location.hash) {
+            const base = link.getAttribute('href').split('#')[0];
+            link.setAttribute('href', `${base}${window.location.hash}`);
+          }
+        });
+      });
+
+      // Mobile navigation menu
+      const toggle = document.querySelector('.nav-toggle');
+      const links = document.querySelector('.nav-links');
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        links.classList.toggle('is-open');
+      });
+
+      links.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          toggle.setAttribute('aria-expanded', 'false');
+          links.classList.remove('is-open');
+        });
+      });
+
+      // One-click email copy
+      const copyEmailBtn = document.getElementById('copy-email-btn');
+      if (copyEmailBtn) {
+        copyEmailBtn.addEventListener('click', async () => {
+          const email = copyEmailBtn.getAttribute('data-email');
+          try {
+            await navigator.clipboard.writeText(email);
+          } catch (_) {
+            const tmp = document.createElement('textarea');
+            tmp.value = email;
+            document.body.appendChild(tmp);
+            tmp.select();
+            document.execCommand('copy');
+            tmp.remove();
+          }
+          copyEmailBtn.textContent = '已复制 ✓';
+          copyEmailBtn.classList.add('is-copied');
+          setTimeout(() => {
+            copyEmailBtn.textContent = '复制';
+            copyEmailBtn.classList.remove('is-copied');
+          }, 1800);
+        });
+      }
+
+      // Quiet segmented publication filter tabs
+      const pubFilterTabs = Array.from(document.querySelectorAll('[data-pub-filter]'));
+      const pubFieldGroups = Array.from(document.querySelectorAll('[data-topic-group]'));
+      const pubCards = Array.from(document.querySelectorAll('.publication'));
+      const additionalMedical = document.querySelector('[data-additional-medical]');
+
+      pubFilterTabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const mode = tab.getAttribute('data-pub-filter');
+          pubFilterTabs.forEach((t) => t.classList.toggle('is-active', t === tab));
+
+          pubCards.forEach((card) => {
+            const topic = card.getAttribute('data-topic');
+            const role = card.getAttribute('data-role');
+            const show = mode === 'all' || (mode === 'first' && role === 'first') || topic === mode;
+            card.hidden = !show;
+          });
+
+          if (additionalMedical) {
+            additionalMedical.hidden = !(mode === 'all' || mode === 'medical');
+          }
+
+          pubFieldGroups.forEach((group) => {
+            const visibleCards = Array.from(group.querySelectorAll('.publication')).filter((c) => !c.hidden);
+            const hasExtra = group.querySelector('[data-additional-medical]:not([hidden])');
+            group.hidden = visibleCards.length === 0 && !hasExtra;
+            const rail = group.querySelector('[data-publication-rail]');
+            if (rail) rail.scrollLeft = 0;
+            const ctrls = group.querySelector('.publication-rail-controls');
+            if (ctrls) ctrls.hidden = visibleCards.length <= 1;
+            if (!group.hidden) {
+              group.classList.remove('is-swapping');
+              void group.offsetWidth;
+              group.classList.add('is-swapping');
+            }
+          });
+
+          window.dispatchEvent(new Event('resize'));
+        });
+      });
+
+      // Inline BibTeX toggles + Copy buttons
+      document.querySelectorAll('[data-bibtex-toggle]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const drawer = document.getElementById(btn.getAttribute('data-bibtex-toggle'));
+          if (!drawer) return;
+          const opening = drawer.hidden;
+          drawer.hidden = !opening;
+          btn.setAttribute('aria-expanded', String(opening));
+        });
+      });
+
+      document.querySelectorAll('[data-bibtex-copy]').forEach((btn) => {
+        btn.addEventListener('click', async () => {
+          const drawer = document.getElementById(btn.getAttribute('data-bibtex-copy'));
+          const code = drawer ? drawer.querySelector('pre')?.textContent?.trim() : '';
+          if (!code) return;
+          try {
+            await navigator.clipboard.writeText(code);
+          } catch (_) {}
+          btn.textContent = '已复制 ✓';
+          setTimeout(() => {
+            btn.textContent = '复制';
+          }, 1600);
+        });
+      });
+
+      // Paper Figure Lightbox Zoom
+      const lightbox = document.getElementById('figure-lightbox');
+      const lightboxImg = document.getElementById('lightbox-image');
+      const lightboxCap = document.getElementById('lightbox-caption');
+      const lightboxRaw = document.getElementById('lightbox-raw-link');
+      const lightboxClose = document.getElementById('lightbox-close');
+
+      const closeLightbox = () => {
+        lightbox.hidden = true;
+        lightboxImg.src = '';
+      };
+
+      document.querySelectorAll('[data-lightbox-img]').forEach((anchor) => {
+        anchor.addEventListener('click', (e) => {
+          if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+          e.preventDefault();
+          lightboxImg.src = anchor.getAttribute('data-lightbox-img');
+          lightboxCap.textContent = anchor.getAttribute('data-lightbox-title') || '';
+          lightboxRaw.href = anchor.getAttribute('href');
+          lightbox.hidden = false;
+        });
+      });
+
+      lightboxClose.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
+      });
+
+      // Open-source project rail with clickable dots & keyboard arrow support
+      document.querySelectorAll('[data-project-rail]').forEach((rail) => {
+        const section = rail.closest('.open-source-section');
+        const controls = section.querySelector('.project-rail-controls');
+        const previous = section.querySelector('[data-project-rail-control="previous"]');
+        const next = section.querySelector('[data-project-rail-control="next"]');
+        const counter = section.querySelector('[data-project-rail-counter]');
+        const cards = Array.from(rail.querySelectorAll('.open-source-card'));
+
+        const dotsWrap = document.createElement('div');
+        dotsWrap.className = 'rail-dots';
+        controls.insertBefore(dotsWrap, counter);
+
+        const projectsPerPage = () => (
+          window.matchMedia('(max-width: 720px)').matches ? 1 : 3
+        );
+
+        const pageCount = () => Math.max(1, Math.ceil(cards.length / projectsPerPage()));
+
+        const cardScrollPosition = (card) => (
+          card.getBoundingClientRect().left - rail.getBoundingClientRect().left + rail.scrollLeft
+        );
+
+        const pageScrollPosition = (page) => Math.min(
+          cardScrollPosition(cards[page * projectsPerPage()]),
+          rail.scrollWidth - rail.clientWidth
+        );
+
+        const currentPage = () => (
+          Array.from({ length: pageCount() }, (_, page) => page).reduce((closest, page) => (
+            Math.abs(pageScrollPosition(page) - rail.scrollLeft) < Math.abs(pageScrollPosition(closest) - rail.scrollLeft) ? page : closest
+          ), 0)
+        );
+
+        const syncDots = (page, total) => {
+          if (dotsWrap.children.length !== total) {
+            dotsWrap.innerHTML = '';
+            for (let i = 0; i < total; i += 1) {
+              const dot = document.createElement('button');
+              dot.type = 'button';
+              dot.className = 'rail-dot';
+              dot.setAttribute('aria-label', `第 ${i + 1} 页开源项目`);
+              dot.addEventListener('click', () => {
+                rail.scrollTo({ left: pageScrollPosition(i), behavior: 'smooth' });
+              });
+              dotsWrap.appendChild(dot);
+            }
+          }
+          Array.from(dotsWrap.children).forEach((d, idx) => d.classList.toggle('is-active', idx === page));
+        };
+
+        const updateControls = () => {
+          const page = currentPage();
+          const total = pageCount();
+          previous.disabled = page === 0;
+          next.disabled = page === total - 1;
+          counter.textContent = `${page + 1} / ${total}`;
+          syncDots(page, total);
+        };
+
+        const showProjectPage = (direction) => {
+          const target = Math.max(0, Math.min(pageCount() - 1, currentPage() + direction));
+          rail.scrollTo({ left: pageScrollPosition(target), behavior: 'smooth' });
+        };
+
+        previous.addEventListener('click', () => showProjectPage(-1));
+        next.addEventListener('click', () => showProjectPage(1));
+        rail.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowRight') showProjectPage(1);
+          if (e.key === 'ArrowLeft') showProjectPage(-1);
+        });
+        rail.addEventListener('scroll', updateControls, { passive: true });
+        window.addEventListener('resize', updateControls);
+        updateControls();
+      });
+
+      // Publication rails with clickable dots, filter-aware counts, & keyboard navigation
+      document.querySelectorAll('[data-publication-rail]').forEach((rail) => {
+        const field = rail.closest('.publication-field');
+        const controls = field.querySelector('.publication-rail-controls');
+        const previous = field.querySelector('[data-publication-control="previous"]');
+        const next = field.querySelector('[data-publication-control="next"]');
+        const counter = field.querySelector('[data-publication-counter]');
+
+        const dotsWrap = document.createElement('div');
+        dotsWrap.className = 'rail-dots';
+        controls.insertBefore(dotsWrap, counter);
+
+        const visibleCards = () => Array.from(rail.querySelectorAll('.publication:not([hidden])'));
+
+        const cardScrollPosition = (card) => (
+          card.getBoundingClientRect().left - rail.getBoundingClientRect().left + rail.scrollLeft
+        );
+
+        const currentIndex = () => {
+          const cards = visibleCards();
+          if (!cards.length) return 0;
+          return cards.reduce((closest, card, index) => (
+            Math.abs(cardScrollPosition(card) - rail.scrollLeft) < Math.abs(cardScrollPosition(cards[closest]) - rail.scrollLeft) ? index : closest
+          ), 0);
+        };
+
+        const syncDots = (index, cards) => {
+          if (dotsWrap.children.length !== cards.length) {
+            dotsWrap.innerHTML = '';
+            cards.forEach((card, i) => {
+              const dot = document.createElement('button');
+              dot.type = 'button';
+              dot.className = 'rail-dot';
+              dot.setAttribute('aria-label', `查看第 ${i + 1} 篇论文`);
+              dot.addEventListener('click', () => {
+                rail.scrollTo({ left: cardScrollPosition(card), behavior: 'smooth' });
+              });
+              dotsWrap.appendChild(dot);
+            });
+          }
+          Array.from(dotsWrap.children).forEach((d, idx) => d.classList.toggle('is-active', idx === index));
+        };
+
+        const updatePublicationControls = () => {
+          const cards = visibleCards();
+          if (!cards.length) return;
+          const index = currentIndex();
+          previous.disabled = index === 0;
+          next.disabled = index === cards.length - 1;
+          counter.textContent = `${index + 1} / ${cards.length}`;
+          syncDots(index, cards);
+        };
+
+        const showPublication = (direction) => {
+          const cards = visibleCards();
+          if (!cards.length) return;
+          const target = Math.max(0, Math.min(cards.length - 1, currentIndex() + direction));
+          rail.scrollTo({ left: cardScrollPosition(cards[target]), behavior: 'smooth' });
+        };
+
+        previous.addEventListener('click', () => showPublication(-1));
+        next.addEventListener('click', () => showPublication(1));
+        rail.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowRight') showPublication(1);
+          if (e.key === 'ArrowLeft') showPublication(-1);
+        });
+        rail.addEventListener('scroll', updatePublicationControls, { passive: true });
+        window.addEventListener('resize', updatePublicationControls);
+        updatePublicationControls();
+      });
+
+      const visitorLocation = document.getElementById('visitor-location');
+
+      async function loadVisitorLocation() {
+        if (!visitorLocation) {
+          return;
+        }
+
+        const providers = [
+          {
+            url: 'https://ipwho.is/',
+            parse: (data) => {
+              if (!data || data.success === false) {
+                return '';
+              }
+              return [data.city, data.region, data.country].filter(Boolean).join(', ');
+            },
+          },
+          {
+            url: 'https://get.geojs.io/v1/ip/geo.json',
+            parse: (data) => [data.city, data.region, data.country].filter(Boolean).join(', '),
+          },
+        ];
+
+        for (const provider of providers) {
+          try {
+            const response = await fetch(provider.url, { cache: 'no-store' });
+            if (!response.ok) {
+              continue;
+            }
+            const data = await response.json();
+            const location = provider.parse(data);
+            if (location) {
+              visitorLocation.textContent = `大致位置：${location}`;
+              return;
+            }
+          } catch (error) {
+            // Try the next public geolocation provider.
+          }
+        }
+
+        visitorLocation.textContent = '大致位置：暂不可用';
+      }
+
+      loadVisitorLocation();
+    </script>
+  </body>
+</html>

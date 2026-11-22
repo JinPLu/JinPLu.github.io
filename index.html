@@ -13,22 +13,30 @@
     <meta property="og:description" content="Controllable multi-shot video generation, video and embodied world models, and efficient 3D visual representation.">
     <meta property="og:type" content="profile">
     <meta property="og:image" content="assets/img/profile.jpg">
+    <link rel="alternate" hreflang="en" href="index.html">
+    <link rel="alternate" hreflang="zh-CN" href="zh.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css?v=20261120-interactive">
+    <link rel="stylesheet" href="assets/css/styles.css?v=20261122-bilingual">
   </head>
   <body>
     <header class="site-header" id="site-header">
       <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
       <nav class="navbar" aria-label="Primary navigation">
         <a class="brand" href="#about">Jinpeng Lu</a>
-        <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <div class="nav-actions">
+          <div class="lang-switch" role="group" aria-label="Language switcher">
+            <a class="lang-switch-btn is-active" href="index.html" lang="en" aria-current="page">EN</a>
+            <a class="lang-switch-btn" href="zh.html" lang="zh-CN" data-lang-switch>中文</a>
+          </div>
+          <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
         <div class="nav-links" id="primary-navigation">
           <a href="#about">About</a>
           <a href="#news">News</a>
@@ -46,7 +54,6 @@
         <section class="profile-card">
           <img class="avatar" src="assets/img/profile.jpg" alt="Portrait of Jinpeng Lu">
           <h1>Jinpeng Lu</h1>
-          <p class="name-cn">卢锦鹏</p>
           <p class="profile-role">M.S. Student at USTC<br>Video Generation &amp; World Models</p>
 
           <ul class="profile-links" aria-label="Profile links">
@@ -105,7 +112,7 @@
             <p>
               As first author, I proposed <a href="https://jinplu.github.io/CaT-Movie/" target="_blank" rel="noopener">CaT-Movie</a> (with <a href="https://huggingface.co/datasets/JinPLU/CaT-MBench" target="_blank" rel="noopener">CaT-MBench</a>) and <a href="https://jinplu.github.io/WRBench/" target="_blank" rel="noopener">WRBench</a>. At X-Humanoid, I led camera-controlled video generation and conducted a controlled diagnostic study of a one-step <strong>Cosmos3-Edge</strong> world-action model. My publications include first-author papers at ICLR 2026 and MICCAI 2024 (top 11%), and collaborative work at EMNLP 2026 and in <em>Medical Image Analysis</em> 2025.
             </p>
-            <p class="current-focus">I am looking for a full-time internship in a <strong>core video, multimodal, or world-model foundation team</strong> (pre-training, RL post-training, or research) and welcome collaborations. View my <a href="docs/jinpeng-lu-cv-cn.pdf" target="_blank" rel="noopener">简历</a> / <a href="docs/jinpeng-lu-cv-en.pdf" target="_blank" rel="noopener">CV</a> or <a href="mailto:jinplu@mail.ustc.edu.cn">email me</a>.</p>
+            <p class="current-focus">I am looking for a full-time internship in a <strong>core video, multimodal, or world-model foundation team</strong> (pre-training, RL post-training, or research) and welcome collaborations. View my <a href="docs/jinpeng-lu-cv-en.pdf" target="_blank" rel="noopener">CV (EN)</a> / <a href="docs/jinpeng-lu-cv-cn.pdf" target="_blank" rel="noopener">CV (CN)</a> or <a href="mailto:jinplu@mail.ustc.edu.cn">email me</a>.</p>
           </div>
 
           <ul class="quick-facts" aria-label="Research interests">
@@ -797,6 +804,16 @@
         );
         spyTargets.forEach((sec) => spyObserver.observe(sec));
       }
+
+      // Preserve active section anchor when switching language
+      document.querySelectorAll('[data-lang-switch]').forEach((link) => {
+        link.addEventListener('click', () => {
+          if (window.location.hash) {
+            const base = link.getAttribute('href').split('#')[0];
+            link.setAttribute('href', `${base}${window.location.hash}`);
+          }
+        });
+      });
 
       // Mobile navigation menu
       const toggle = document.querySelector('.nav-toggle');
